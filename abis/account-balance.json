@@ -1,0 +1,1073 @@
+{
+  "programType": "contract",
+  "specVersion": "1",
+  "encodingVersion": "1",
+  "concreteTypes": [
+    {
+      "type": "()",
+      "concreteTypeId": "2e38e77b22c314a449e91fafed92a43826ac6aa403ae6a8acb6cf58239fbaf5d"
+    },
+    {
+      "type": "(struct compolabs_sway_libs::signed_integers::i64::I64, struct compolabs_sway_libs::signed_integers::i64::I64)",
+      "concreteTypeId": "2dc9f1d874ea07098074d9faab0f3a78ab65b0a242a057f23fa7cc57eeda134e",
+      "metadataTypeId": 2
+    },
+    {
+      "type": "(struct compolabs_sway_libs::signed_integers::i64::I64, struct compolabs_sway_libs::signed_integers::i64::I64, struct compolabs_sway_libs::signed_integers::i64::I64, u64)",
+      "concreteTypeId": "18e6eeb4dc6c8adc7987e433a20e6f448393f0529643892c0a6196e5052544c9",
+      "metadataTypeId": 3
+    },
+    {
+      "type": "(struct compolabs_sway_libs::signed_integers::i64::I64, u64)",
+      "concreteTypeId": "615e425782085f675574878c7d432fe0923c5934f5b330fb2684c5005254a9d8",
+      "metadataTypeId": 1
+    },
+    {
+      "type": "(struct std::asset_id::AssetId, struct account_balance_abi::data_structures::AccountBalance)",
+      "concreteTypeId": "85124d4d4054de2e2cfb0d52db5dcf06cb063ee1b23de974ccd69adc4c843ee5",
+      "metadataTypeId": 0
+    },
+    {
+      "type": "enum account_balance_abi::errors::Error",
+      "concreteTypeId": "8763a76d860a0dc464f395e8b6eb87d38360622db2ad34851c7ac8ce1e57df41",
+      "metadataTypeId": 5
+    },
+    {
+      "type": "enum std::identity::Identity",
+      "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335",
+      "metadataTypeId": 6
+    },
+    {
+      "type": "struct account_balance_abi::data_structures::AccountBalance",
+      "concreteTypeId": "679c3b8c7552bd8aa3e04c230be4c0dcb6a3a3a4cc0db1103c7e2da7ab9085ca",
+      "metadataTypeId": 9
+    },
+    {
+      "type": "struct compolabs_sway_libs::signed_integers::i64::I64",
+      "concreteTypeId": "c35f504fa0cf6c3c54066e2780bc4033982f9a802842793a014ba0f5c699d8ce",
+      "metadataTypeId": 10
+    },
+    {
+      "type": "struct events::AccountBalanceChangeEvent",
+      "concreteTypeId": "76814460f2b5ce69a0885186c9e4f655a646c682bd0112b276bbf3d6b6c86b6b",
+      "metadataTypeId": 11
+    },
+    {
+      "type": "struct events::OwedRealizedPnlChangeEvent",
+      "concreteTypeId": "0a687bf2590a0714c134c743325abd1f1cfc20e81839bab254749129a8e1c58c",
+      "metadataTypeId": 12
+    },
+    {
+      "type": "struct std::asset_id::AssetId",
+      "concreteTypeId": "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974",
+      "metadataTypeId": 14
+    },
+    {
+      "type": "struct std::contract_id::ContractId",
+      "concreteTypeId": "29c10735d33b5159f0c71ee1dbd17b36a3e69e41f00fab0d42e1bd9f428d8a54",
+      "metadataTypeId": 15
+    },
+    {
+      "type": "struct std::vec::Vec<(struct std::asset_id::AssetId, struct account_balance_abi::data_structures::AccountBalance)>",
+      "concreteTypeId": "3956ef73fc22281580d20415cdb2174205b20b76ae2b1a1c5c3d1fee942cf097",
+      "metadataTypeId": 17,
+      "typeArguments": [
+        "85124d4d4054de2e2cfb0d52db5dcf06cb063ee1b23de974ccd69adc4c843ee5"
+      ]
+    },
+    {
+      "type": "struct std::vec::Vec<struct std::asset_id::AssetId>",
+      "concreteTypeId": "8b2275934873f381a769c82334e6f66595eeb350d8b2dd012eef4d9bb117942b",
+      "metadataTypeId": 17,
+      "typeArguments": [
+        "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974"
+      ]
+    },
+    {
+      "type": "u64",
+      "concreteTypeId": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0"
+    }
+  ],
+  "metadataTypes": [
+    {
+      "type": "(_, _)",
+      "metadataTypeId": 0,
+      "components": [
+        {
+          "name": "__tuple_element",
+          "typeId": 14
+        },
+        {
+          "name": "__tuple_element",
+          "typeId": 9
+        }
+      ]
+    },
+    {
+      "type": "(_, _)",
+      "metadataTypeId": 1,
+      "components": [
+        {
+          "name": "__tuple_element",
+          "typeId": 10
+        },
+        {
+          "name": "__tuple_element",
+          "typeId": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0"
+        }
+      ]
+    },
+    {
+      "type": "(_, _)",
+      "metadataTypeId": 2,
+      "components": [
+        {
+          "name": "__tuple_element",
+          "typeId": 10
+        },
+        {
+          "name": "__tuple_element",
+          "typeId": 10
+        }
+      ]
+    },
+    {
+      "type": "(_, _, _, _)",
+      "metadataTypeId": 3,
+      "components": [
+        {
+          "name": "__tuple_element",
+          "typeId": 10
+        },
+        {
+          "name": "__tuple_element",
+          "typeId": 10
+        },
+        {
+          "name": "__tuple_element",
+          "typeId": 10
+        },
+        {
+          "name": "__tuple_element",
+          "typeId": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0"
+        }
+      ]
+    },
+    {
+      "type": "b256",
+      "metadataTypeId": 4
+    },
+    {
+      "type": "enum account_balance_abi::errors::Error",
+      "metadataTypeId": 5,
+      "components": [
+        {
+          "name": "AccessDenied",
+          "typeId": "2e38e77b22c314a449e91fafed92a43826ac6aa403ae6a8acb6cf58239fbaf5d"
+        },
+        {
+          "name": "NotEnoughFreeCollateralByImRatio",
+          "typeId": "2e38e77b22c314a449e91fafed92a43826ac6aa403ae6a8acb6cf58239fbaf5d"
+        }
+      ]
+    },
+    {
+      "type": "enum std::identity::Identity",
+      "metadataTypeId": 6,
+      "components": [
+        {
+          "name": "Address",
+          "typeId": 13
+        },
+        {
+          "name": "ContractId",
+          "typeId": 15
+        }
+      ]
+    },
+    {
+      "type": "generic T",
+      "metadataTypeId": 7
+    },
+    {
+      "type": "raw untyped ptr",
+      "metadataTypeId": 8
+    },
+    {
+      "type": "struct account_balance_abi::data_structures::AccountBalance",
+      "metadataTypeId": 9,
+      "components": [
+        {
+          "name": "taker_position_size",
+          "typeId": 10
+        },
+        {
+          "name": "taker_open_notional",
+          "typeId": 10
+        },
+        {
+          "name": "last_tw_premium_growth_global",
+          "typeId": 10
+        }
+      ]
+    },
+    {
+      "type": "struct compolabs_sway_libs::signed_integers::i64::I64",
+      "metadataTypeId": 10,
+      "components": [
+        {
+          "name": "underlying",
+          "typeId": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0"
+        }
+      ]
+    },
+    {
+      "type": "struct events::AccountBalanceChangeEvent",
+      "metadataTypeId": 11,
+      "components": [
+        {
+          "name": "trader",
+          "typeId": 6
+        },
+        {
+          "name": "base_token",
+          "typeId": 14
+        },
+        {
+          "name": "account_balance",
+          "typeId": 9
+        },
+        {
+          "name": "timestamp",
+          "typeId": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0"
+        }
+      ]
+    },
+    {
+      "type": "struct events::OwedRealizedPnlChangeEvent",
+      "metadataTypeId": 12,
+      "components": [
+        {
+          "name": "trader",
+          "typeId": 6
+        },
+        {
+          "name": "owed_realized_pnl",
+          "typeId": 10
+        }
+      ]
+    },
+    {
+      "type": "struct std::address::Address",
+      "metadataTypeId": 13,
+      "components": [
+        {
+          "name": "bits",
+          "typeId": 4
+        }
+      ]
+    },
+    {
+      "type": "struct std::asset_id::AssetId",
+      "metadataTypeId": 14,
+      "components": [
+        {
+          "name": "bits",
+          "typeId": 4
+        }
+      ]
+    },
+    {
+      "type": "struct std::contract_id::ContractId",
+      "metadataTypeId": 15,
+      "components": [
+        {
+          "name": "bits",
+          "typeId": 4
+        }
+      ]
+    },
+    {
+      "type": "struct std::vec::RawVec",
+      "metadataTypeId": 16,
+      "components": [
+        {
+          "name": "ptr",
+          "typeId": 8
+        },
+        {
+          "name": "cap",
+          "typeId": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0"
+        }
+      ],
+      "typeParameters": [
+        7
+      ]
+    },
+    {
+      "type": "struct std::vec::Vec",
+      "metadataTypeId": 17,
+      "components": [
+        {
+          "name": "buf",
+          "typeId": 16,
+          "typeArguments": [
+            {
+              "name": "",
+              "typeId": 7
+            }
+          ]
+        },
+        {
+          "name": "len",
+          "typeId": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0"
+        }
+      ],
+      "typeParameters": [
+        7
+      ]
+    }
+  ],
+  "functions": [
+    {
+      "inputs": [
+        {
+          "name": "sell_trader",
+          "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
+        },
+        {
+          "name": "buy_trader",
+          "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
+        },
+        {
+          "name": "base_token",
+          "concreteTypeId": "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974"
+        },
+        {
+          "name": "trade_amount",
+          "concreteTypeId": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0"
+        },
+        {
+          "name": "trade_value",
+          "concreteTypeId": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0"
+        },
+        {
+          "name": "seller_fee",
+          "concreteTypeId": "c35f504fa0cf6c3c54066e2780bc4033982f9a802842793a014ba0f5c699d8ce"
+        },
+        {
+          "name": "buyer_fee",
+          "concreteTypeId": "c35f504fa0cf6c3c54066e2780bc4033982f9a802842793a014ba0f5c699d8ce"
+        },
+        {
+          "name": "matcher",
+          "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
+        }
+      ],
+      "name": "execute_trade",
+      "output": "2e38e77b22c314a449e91fafed92a43826ac6aa403ae6a8acb6cf58239fbaf5d",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read",
+            "write"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "trader",
+          "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
+        },
+        {
+          "name": "amount",
+          "concreteTypeId": "c35f504fa0cf6c3c54066e2780bc4033982f9a802842793a014ba0f5c699d8ce"
+        }
+      ],
+      "name": "modify_owed_realized_pnl",
+      "output": "2e38e77b22c314a449e91fafed92a43826ac6aa403ae6a8acb6cf58239fbaf5d",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read",
+            "write"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "trader",
+          "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
+        },
+        {
+          "name": "base_token",
+          "concreteTypeId": "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974"
+        },
+        {
+          "name": "exchanged_position_size",
+          "concreteTypeId": "c35f504fa0cf6c3c54066e2780bc4033982f9a802842793a014ba0f5c699d8ce"
+        },
+        {
+          "name": "exchanged_position_notional",
+          "concreteTypeId": "c35f504fa0cf6c3c54066e2780bc4033982f9a802842793a014ba0f5c699d8ce"
+        }
+      ],
+      "name": "modify_position",
+      "output": "2e38e77b22c314a449e91fafed92a43826ac6aa403ae6a8acb6cf58239fbaf5d",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read",
+            "write"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "trader",
+          "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
+        },
+        {
+          "name": "base_token",
+          "concreteTypeId": "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974"
+        }
+      ],
+      "name": "register_base_token",
+      "output": "2e38e77b22c314a449e91fafed92a43826ac6aa403ae6a8acb6cf58239fbaf5d",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read",
+            "write"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "trader",
+          "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
+        }
+      ],
+      "name": "settle_all_funding",
+      "output": "2e38e77b22c314a449e91fafed92a43826ac6aa403ae6a8acb6cf58239fbaf5d",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read",
+            "write"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "trader",
+          "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
+        }
+      ],
+      "name": "settle_bad_debt",
+      "output": "2e38e77b22c314a449e91fafed92a43826ac6aa403ae6a8acb6cf58239fbaf5d",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read",
+            "write"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "trader",
+          "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
+        },
+        {
+          "name": "base_token",
+          "concreteTypeId": "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974"
+        }
+      ],
+      "name": "settle_funding",
+      "output": "2e38e77b22c314a449e91fafed92a43826ac6aa403ae6a8acb6cf58239fbaf5d",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read",
+            "write"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "trader",
+          "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
+        }
+      ],
+      "name": "settle_owed_realized_pnl",
+      "output": "c35f504fa0cf6c3c54066e2780bc4033982f9a802842793a014ba0f5c699d8ce",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read",
+            "write"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "trader",
+          "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
+        },
+        {
+          "name": "base_token",
+          "concreteTypeId": "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974"
+        }
+      ],
+      "name": "settle_position_in_closed_market",
+      "output": "18e6eeb4dc6c8adc7987e433a20e6f448393f0529643892c0a6196e5052544c9",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read",
+            "write"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "insurance_fund_fee_share",
+          "concreteTypeId": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0"
+        }
+      ],
+      "name": "update_insurance_fund_fee_share",
+      "output": "2e38e77b22c314a449e91fafed92a43826ac6aa403ae6a8acb6cf58239fbaf5d",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "write"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "max_funding_rate",
+          "concreteTypeId": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0"
+        }
+      ],
+      "name": "update_max_funding_rate",
+      "output": "2e38e77b22c314a449e91fafed92a43826ac6aa403ae6a8acb6cf58239fbaf5d",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "write"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "protocol_fee_rate",
+          "concreteTypeId": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0"
+        }
+      ],
+      "name": "update_protocol_fee_rate",
+      "output": "2e38e77b22c314a449e91fafed92a43826ac6aa403ae6a8acb6cf58239fbaf5d",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "write"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "trader",
+          "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
+        },
+        {
+          "name": "base_token",
+          "concreteTypeId": "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974"
+        },
+        {
+          "name": "last_tw_premium_growth_global",
+          "concreteTypeId": "c35f504fa0cf6c3c54066e2780bc4033982f9a802842793a014ba0f5c699d8ce"
+        }
+      ],
+      "name": "update_tw_premium_growth_global",
+      "output": "2e38e77b22c314a449e91fafed92a43826ac6aa403ae6a8acb6cf58239fbaf5d",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read",
+            "write"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "trader",
+          "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
+        },
+        {
+          "name": "base_token",
+          "concreteTypeId": "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974"
+        }
+      ],
+      "name": "get_account_balance",
+      "output": "679c3b8c7552bd8aa3e04c230be4c0dcb6a3a3a4cc0db1103c7e2da7ab9085ca",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "trader",
+          "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
+        }
+      ],
+      "name": "get_all_pending_funding_payment",
+      "output": "c35f504fa0cf6c3c54066e2780bc4033982f9a802842793a014ba0f5c699d8ce",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "trader",
+          "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
+        }
+      ],
+      "name": "get_all_trader_positions",
+      "output": "3956ef73fc22281580d20415cdb2174205b20b76ae2b1a1c5c3d1fee942cf097",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "trader",
+          "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
+        }
+      ],
+      "name": "get_base_tokens",
+      "output": "8b2275934873f381a769c82334e6f66595eeb350d8b2dd012eef4d9bb117942b",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "token",
+          "concreteTypeId": "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974"
+        }
+      ],
+      "name": "get_funding",
+      "output": "615e425782085f675574878c7d432fe0923c5934f5b330fb2684c5005254a9d8",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "market_twap",
+          "concreteTypeId": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0"
+        },
+        {
+          "name": "index_twap",
+          "concreteTypeId": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0"
+        }
+      ],
+      "name": "get_funding_delta",
+      "output": "c35f504fa0cf6c3c54066e2780bc4033982f9a802842793a014ba0f5c699d8ce",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "base_token",
+          "concreteTypeId": "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974"
+        }
+      ],
+      "name": "get_funding_growth_global",
+      "output": "c35f504fa0cf6c3c54066e2780bc4033982f9a802842793a014ba0f5c699d8ce",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "base_token",
+          "concreteTypeId": "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974"
+        }
+      ],
+      "name": "get_funding_rate",
+      "output": "c35f504fa0cf6c3c54066e2780bc4033982f9a802842793a014ba0f5c699d8ce",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "trader",
+          "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
+        },
+        {
+          "name": "base_token",
+          "concreteTypeId": "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974"
+        },
+        {
+          "name": "account_value",
+          "concreteTypeId": "c35f504fa0cf6c3c54066e2780bc4033982f9a802842793a014ba0f5c699d8ce"
+        }
+      ],
+      "name": "get_liquidatable_position_size",
+      "output": "c35f504fa0cf6c3c54066e2780bc4033982f9a802842793a014ba0f5c699d8ce",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "trader",
+          "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
+        }
+      ],
+      "name": "get_margin_requirement",
+      "output": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "trader",
+          "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
+        },
+        {
+          "name": "buffer",
+          "concreteTypeId": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0"
+        }
+      ],
+      "name": "get_margin_requirement_for_liquidation",
+      "output": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "trader",
+          "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
+        },
+        {
+          "name": "base_token",
+          "concreteTypeId": "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974"
+        }
+      ],
+      "name": "get_pending_funding_payment",
+      "output": "2dc9f1d874ea07098074d9faab0f3a78ab65b0a242a057f23fa7cc57eeda134e",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "trader",
+          "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
+        }
+      ],
+      "name": "get_pnl",
+      "output": "2dc9f1d874ea07098074d9faab0f3a78ab65b0a242a057f23fa7cc57eeda134e",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [],
+      "name": "get_protocol_fee_rate",
+      "output": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "trader",
+          "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
+        }
+      ],
+      "name": "get_settlement_token_balance_and_unrealized_pnl",
+      "output": "2dc9f1d874ea07098074d9faab0f3a78ab65b0a242a057f23fa7cc57eeda134e",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "trader",
+          "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
+        },
+        {
+          "name": "settlement_token_collateral",
+          "concreteTypeId": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0"
+        }
+      ],
+      "name": "get_settlement_token_balance_and_unrealized_pnl_by_vault",
+      "output": "2dc9f1d874ea07098074d9faab0f3a78ab65b0a242a057f23fa7cc57eeda134e",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "trader",
+          "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
+        },
+        {
+          "name": "base_token",
+          "concreteTypeId": "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974"
+        }
+      ],
+      "name": "get_taker_open_notional",
+      "output": "c35f504fa0cf6c3c54066e2780bc4033982f9a802842793a014ba0f5c699d8ce",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "trader",
+          "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
+        },
+        {
+          "name": "base_token",
+          "concreteTypeId": "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974"
+        }
+      ],
+      "name": "get_taker_position_size",
+      "output": "c35f504fa0cf6c3c54066e2780bc4033982f9a802842793a014ba0f5c699d8ce",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "trader",
+          "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
+        }
+      ],
+      "name": "get_total_abs_position_value",
+      "output": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "trader",
+          "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
+        },
+        {
+          "name": "base_token",
+          "concreteTypeId": "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974"
+        }
+      ],
+      "name": "get_total_position_value",
+      "output": "c35f504fa0cf6c3c54066e2780bc4033982f9a802842793a014ba0f5c699d8ce",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    }
+  ],
+  "loggedTypes": [
+    {
+      "logId": "9755825306656705988",
+      "concreteTypeId": "8763a76d860a0dc464f395e8b6eb87d38360622db2ad34851c7ac8ce1e57df41"
+    },
+    {
+      "logId": "749985618763319060",
+      "concreteTypeId": "0a687bf2590a0714c134c743325abd1f1cfc20e81839bab254749129a8e1c58c"
+    },
+    {
+      "logId": "8539181551650721385",
+      "concreteTypeId": "76814460f2b5ce69a0885186c9e4f655a646c682bd0112b276bbf3d6b6c86b6b"
+    }
+  ],
+  "messagesTypes": [],
+  "configurables": [
+    {
+      "name": "PROXY_CONTRACT",
+      "concreteTypeId": "29c10735d33b5159f0c71ee1dbd17b36a3e69e41f00fab0d42e1bd9f428d8a54",
+      "offset": 80856
+    },
+    {
+      "name": "FULLY_CLOSED_RATIO",
+      "concreteTypeId": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0",
+      "offset": 80848
+    },
+    {
+      "name": "SETTLEMENT_TOKEN",
+      "concreteTypeId": "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974",
+      "offset": 80888
+    },
+    {
+      "name": "DUST",
+      "concreteTypeId": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0",
+      "offset": 80840
+    }
+  ]
+}

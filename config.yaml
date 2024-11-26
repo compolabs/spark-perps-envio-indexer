@@ -1,24 +1,17 @@
 name: OrderBook
 ecosystem: fuel
 networks:
-  - id: 0
+  - id: 9889
     start_block: 0
-    hyperfuel_config:
-      url: https://fuel-testnet.hypersync.xyz
     contracts:
-      - name: Market
+      - name: Account
         address:
-          - 0x944a3d62e65f3aefa7ac4a065eb9390a98806ef254aaece6df239ee78e6c2998
-          - 0xc5ed0d9b17beedd1c6c10a84bb496f12a5082aa3ce2ad55630bbcac22c64fcf4
-        abi_file_path: ./abis/market.json
+          - 0xefad74ba7f8d09f5841c330a1199dc6bc7aef7712aa8344b35a7b984d5c9d7af
+        abi_file_path: ./abis/account-balance.json
         handler: ./src/OrderBookHandlers.ts
         events:
-          - name: DepositEvent
-          - name: WithdrawEvent
-          - name: WithdrawToMarketEvent
-          - name: OpenOrderEvent
-          - name: CancelOrderEvent
-          - name: TradeOrderEvent
+          - name: OwedRealizedPnlChangeEvent
+          - name: AccountBalanceChangeEvent
             
             
             

@@ -12,5 +12,5 @@
     "skipLibCheck": true,
     "module": "CommonJS", 
   },
-  "include": ["src", "test"]
+  "include": ["src", "test", "src/handlers/depositEventHandler.ts"]
 }

@@ -1,137 +1,157 @@
-enum OrderType {
-  Sell
-  Buy
-}
+# enum OrderType {
+#   Sell
+#   Buy
+# }
 
-enum OrderStatus {
-  Active
-  Closed
-  Canceled
-}
+# enum OrderStatus {
+#   Active
+#   Closed
+#   Canceled
+# }
 
-type User {
+# type User {
+#   id: ID!
+#   active: Int!
+#   closed: Int!
+#   canceled: Int!
+#   timestamp: String!
+# }
+
+type OwedRealizedPnlChangeEvent {
   id: ID!
-  active: Int!
-  closed: Int!
-  canceled: Int!
-  timestamp: String!
-}
-
-type OpenOrderEvent {
-  id: ID!
-  market: String! @index
-  user: String! @index
-  orderId: String! @index
-  baseAmount: BigInt!
-  quoteAmount: BigInt!
-  asset: String!
-  amount: BigInt!
-  orderType: OrderType!
-  price: BigInt!
+  trader: String! @index
+  owedRealizedPnl: BigInt!
   timestamp: String!
   txId: String! @index
 }
 
-type Order {
+type AccountBalanceChangeEvent {
   id: ID!
-  market: String! @index
-  asset: String! @index
-  amount: BigInt!
-  orderType: OrderType! @index
-  price: BigInt! @index
   user: String! @index
-  status: OrderStatus! @index
-  initialAmount: BigInt!
-  timestamp: String!
-}
-
-type ActiveSellOrder {
-  id: ID!
-  market: String! @index
-  asset: String! @index
-  amount: BigInt!
-  orderType: OrderType! @index
-  price: BigInt! @index
-  user: String! @index
-  status: OrderStatus! @index
-  initialAmount: BigInt!
-  timestamp: String!
-}
-
-type ActiveBuyOrder {
-  id: ID!
-  market: String! @index
-  asset: String! @index
-  amount: BigInt!
-  orderType: OrderType! @index
-  price: BigInt! @index
-  user: String! @index
-  status: OrderStatus! @index
-  initialAmount: BigInt!
-  timestamp: String!
-}
-
-type CancelOrderEvent {
-  id: ID!
-  market: String! @index
-  user: String! @index
-  orderId: String! @index
-  baseAmount: BigInt!
-  quoteAmount: BigInt!
+  baseToken: String!
+  takerPositionSize: BigInt!
+  takerOpenNotional: BigInt!
+  lastTwPremiumGrowthGlobal: BigInt!
   timestamp: String!
   txId: String! @index
 }
 
-type TradeOrderEvent {
-  id: ID!
-  market: String! @index
-  sellOrderId: String! @index
-  buyOrderId: String! @index
-  tradeSize: BigInt! @index
-  tradePrice: BigInt! @index
-  seller: String! @index
-  buyer: String! @index
-  sellerIsMaker: Boolean! @index
-  sellerBaseAmount: BigInt!
-  sellerQuoteAmount: BigInt!
-  buyerBaseAmount: BigInt!
-  buyerQuoteAmount: BigInt!
-  timestamp: String!
-  txId: String! @index
-}
+# type OpenOrderEvent {
+#   id: ID!
+#   market: String! @index
+#   user: String! @index
+#   orderId: String! @index
+#   baseAmount: BigInt!
+#   quoteAmount: BigInt!
+#   asset: String!
+#   amount: BigInt!
+#   orderType: OrderType!
+#   price: BigInt!
+#   timestamp: String!
+#   txId: String! @index
+# }
 
-type DepositEvent {
-  id: ID!
-  market: String! @index
-  user: String! @index
-  amount: BigInt!
-  asset: String! @index
-  baseAmount: BigInt!
-  quoteAmount: BigInt!
-  timestamp: String!
-  txId: String! @index
-}
-type WithdrawEvent {
-  id: ID!
-  market: String! @index
-  user: String! @index
-  amount: BigInt!
-  asset: String! @index
-  baseAmount: BigInt!
-  quoteAmount: BigInt! 
-  timestamp: String!
-  txId: String! @index
-}
+# type Order {
+#   id: ID!
+#   market: String! @index
+#   asset: String! @index
+#   amount: BigInt!
+#   orderType: OrderType! @index
+#   price: BigInt! @index
+#   user: String! @index
+#   status: OrderStatus! @index
+#   initialAmount: BigInt!
+#   timestamp: String!
+# }
 
-type WithdrawToMarketEvent {
-  id: ID!
-  market: String! @index
-  toMarket: String! @index
-  user: String! @index
-  amount: BigInt!
-  asset: String! @index
-  baseAmount: BigInt!
-  quoteAmount: BigInt! 
-  timestamp: String!
-  txId: String! @index
-}
+# type ActiveSellOrder {
+#   id: ID!
+#   market: String! @index
+#   asset: String! @index
+#   amount: BigInt!
+#   orderType: OrderType! @index
+#   price: BigInt! @index
+#   user: String! @index
+#   status: OrderStatus! @index
+#   initialAmount: BigInt!
+#   timestamp: String!
+# }
+
+# type ActiveBuyOrder {
+#   id: ID!
+#   market: String! @index
+#   asset: String! @index
+#   amount: BigInt!
+#   orderType: OrderType! @index
+#   price: BigInt! @index
+#   user: String! @index
+#   status: OrderStatus! @index
+#   initialAmount: BigInt!
+#   timestamp: String!
+# }
+
+# type CancelOrderEvent {
+#   id: ID!
+#   market: String! @index
+#   user: String! @index
+#   orderId: String! @index
+#   baseAmount: BigInt!
+#   quoteAmount: BigInt!
+#   timestamp: String!
+#   txId: String! @index
+# }
+
+# type TradeOrderEvent {
+#   id: ID!
+#   market: String! @index
+#   sellOrderId: String! @index
+#   buyOrderId: String! @index
+#   tradeSize: BigInt! @index
+#   tradePrice: BigInt! @index
+#   seller: String! @index
+#   buyer: String! @index
+#   sellerIsMaker: Boolean! @index
+#   sellerBaseAmount: BigInt!
+#   sellerQuoteAmount: BigInt!
+#   buyerBaseAmount: BigInt!
+#   buyerQuoteAmount: BigInt!
+#   timestamp: String!
+#   txId: String! @index
+# }
+
+# type DepositEvent {
+#   id: ID!
+#   market: String! @index
+#   user: String! @index
+#   amount: BigInt!
+#   asset: String! @index
+#   baseAmount: BigInt!
+#   quoteAmount: BigInt!
+#   timestamp: String!
+#   txId: String! @index
+# }
+# type WithdrawEvent {
+#   id: ID!
+#   market: String! @index
+#   user: String! @index
+#   amount: BigInt!
+#   asset: String! @index
+#   baseAmount: BigInt!
+#   quoteAmount: BigInt! 
+#   timestamp: String!
+#   txId: String! @index
+# }
+
+# type WithdrawToMarketEvent {
+#   id: ID!
+#   market: String! @index
+#   toMarket: String! @index
+#   user: String! @index
+#   amount: BigInt!
+#   asset: String! @index
+#   baseAmount: BigInt!
+#   quoteAmount: BigInt! 
+#   timestamp: String!
+#   txId: String! @index
+# }
+
