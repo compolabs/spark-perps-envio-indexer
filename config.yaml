@@ -19,6 +19,15 @@ networks:
         handler: ./src/PerpsHandlers.ts
         events:
           - name: MarketEvent
+      - name: PerpMarket
+        address:
+          - 0x55617f921110f1f27e5dea3aa0bd716fc1c85ed5ef07194e466fb7b9d6a59a05
+        abi_file_path: ./abis/perp-market.json
+        handler: ./src/PerpsHandlers.ts
+        events:
+          - name: TradeEvent
+          - name: OrderEvent
+      
             
             
             

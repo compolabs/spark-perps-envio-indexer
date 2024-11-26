@@ -63,33 +63,101 @@ type MarketEvent {
   txId: String! @index
 }
 
-# type OpenOrderEvent {
-#   id: ID!
-#   market: String! @index
-#   user: String! @index
-#   orderId: String! @index
-#   baseAmount: BigInt!
-#   quoteAmount: BigInt!
-#   asset: String!
-#   amount: BigInt!
-#   orderType: OrderType!
-#   price: BigInt!
-#   timestamp: String!
-#   txId: String! @index
-# }
+type TradeEvent {
+  id: ID!
+  # baseToken: String! @index
 
-# type Order {
-#   id: ID!
-#   market: String! @index
-#   asset: String! @index
-#   amount: BigInt!
-#   orderType: OrderType! @index
-#   price: BigInt! @index
-#   user: String! @index
-#   status: OrderStatus! @index
-#   initialAmount: BigInt!
-#   timestamp: String!
-# }
+  sellOrderId: String! @index
+  buyOrderId: String! @index
+
+  tradeSize: BigInt! @index
+  tradePrice: BigInt! @index
+
+  seller: String! @index
+  buyer: String! @index
+
+  # timestamp: String!
+  txId: String! @index
+}
+
+type OrderEvent {
+  id: ID!
+  market: String! @index
+
+  sender: String! @index
+  trader: String @index
+  orderId: String! @index
+  identifier: String!
+  baseSize: BigInt
+  price: BigInt
+  txId: String! @index
+}
+
+type OpenEvent {
+  id: ID!
+  market: String! @index
+  sender: String! @index
+  trader: String @index
+  orderId: String! @index
+  baseSize: BigInt
+  price: BigInt
+  txId: String! @index
+}
+
+type RemoveUncollaterizedEvent {
+  id: ID!
+  market: String! @index
+  sender: String! @index
+  trader: String @index
+  orderId: String! @index
+  baseSize: BigInt
+  price: BigInt
+  txId: String! @index
+}
+
+type RemoveEvent  {
+  id: ID!
+  market: String! @index
+  sender: String! @index
+  trader: String @index
+  orderId: String! @index
+  baseSize: BigInt
+  price: BigInt
+  txId: String! @index
+}
+
+type RemoveAllEvent  {
+  id: ID!
+  market: String! @index
+  sender: String! @index
+  trader: String @index
+  orderId: String! @index
+  baseSize: BigInt
+  price: BigInt
+  txId: String! @index
+}
+
+type MatchEvent  {
+  id: ID!
+  market: String! @index
+  sender: String! @index
+  trader: String! @index
+  orderId: String! @index
+  baseSize: BigInt!
+  price: BigInt!
+  txId: String! @index
+}
+
+type FulfillEvent  {
+  id: ID!
+  market: String! @index
+  sender: String! @index
+  trader: String! @index
+  orderId: String! @index
+  baseSize: BigInt!
+  price: BigInt!
+  txId: String! @index
+}
 
 # type ActiveSellOrder {
 #   id: ID!
@@ -128,23 +196,7 @@ type MarketEvent {
 #   txId: String! @index
 # }
 
-# type TradeOrderEvent {
-#   id: ID!
-#   market: String! @index
-#   sellOrderId: String! @index
-#   buyOrderId: String! @index
-#   tradeSize: BigInt! @index
-#   tradePrice: BigInt! @index
-#   seller: String! @index
-#   buyer: String! @index
-#   sellerIsMaker: Boolean! @index
-#   sellerBaseAmount: BigInt!
-#   sellerQuoteAmount: BigInt!
-#   buyerBaseAmount: BigInt!
-#   buyerQuoteAmount: BigInt!
-#   timestamp: String!
-#   txId: String! @index
-# }
+
 
 # type DepositEvent {
 #   id: ID!

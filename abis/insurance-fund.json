@@ -1,0 +1,318 @@
+{
+  "programType": "contract",
+  "specVersion": "1",
+  "encodingVersion": "1",
+  "concreteTypes": [
+    {
+      "type": "()",
+      "concreteTypeId": "2e38e77b22c314a449e91fafed92a43826ac6aa403ae6a8acb6cf58239fbaf5d"
+    },
+    {
+      "type": "enum insurance_fund_abi::errors::Error",
+      "concreteTypeId": "8b6a80f7e4e45f973997c8b186edc744828dc47f2aa5a35db94e34acc8fda371",
+      "metadataTypeId": 1
+    },
+    {
+      "type": "enum std::identity::Identity",
+      "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335",
+      "metadataTypeId": 2
+    },
+    {
+      "type": "enum sway_libs::reentrancy::errors::ReentrancyError",
+      "concreteTypeId": "4d216c57b3357523323f59401c7355785b41bdf832f6e1106272186b94797038",
+      "metadataTypeId": 3
+    },
+    {
+      "type": "str",
+      "concreteTypeId": "8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a"
+    },
+    {
+      "type": "struct compolabs_sway_libs::signed_integers::i64::I64",
+      "concreteTypeId": "c35f504fa0cf6c3c54066e2780bc4033982f9a802842793a014ba0f5c699d8ce",
+      "metadataTypeId": 6
+    },
+    {
+      "type": "struct std::asset_id::AssetId",
+      "concreteTypeId": "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974",
+      "metadataTypeId": 8
+    },
+    {
+      "type": "struct std::bytes::Bytes",
+      "concreteTypeId": "cdd87b7d12fe505416570c294c884bca819364863efe3bf539245fa18515fbbb",
+      "metadataTypeId": 9
+    },
+    {
+      "type": "struct std::contract_id::ContractId",
+      "concreteTypeId": "29c10735d33b5159f0c71ee1dbd17b36a3e69e41f00fab0d42e1bd9f428d8a54",
+      "metadataTypeId": 11
+    },
+    {
+      "type": "struct std::vec::Vec<struct std::bytes::Bytes>",
+      "concreteTypeId": "2601885b27af3627b8910876fc176d900cec2b16ec78c538f5f312e785d915f5",
+      "metadataTypeId": 13,
+      "typeArguments": [
+        "cdd87b7d12fe505416570c294c884bca819364863efe3bf539245fa18515fbbb"
+      ]
+    },
+    {
+      "type": "u64",
+      "concreteTypeId": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0"
+    }
+  ],
+  "metadataTypes": [
+    {
+      "type": "b256",
+      "metadataTypeId": 0
+    },
+    {
+      "type": "enum insurance_fund_abi::errors::Error",
+      "metadataTypeId": 1,
+      "components": [
+        {
+          "name": "AccessDenied",
+          "typeId": "2e38e77b22c314a449e91fafed92a43826ac6aa403ae6a8acb6cf58239fbaf5d"
+        }
+      ]
+    },
+    {
+      "type": "enum std::identity::Identity",
+      "metadataTypeId": 2,
+      "components": [
+        {
+          "name": "Address",
+          "typeId": 7
+        },
+        {
+          "name": "ContractId",
+          "typeId": 11
+        }
+      ]
+    },
+    {
+      "type": "enum sway_libs::reentrancy::errors::ReentrancyError",
+      "metadataTypeId": 3,
+      "components": [
+        {
+          "name": "NonReentrant",
+          "typeId": "2e38e77b22c314a449e91fafed92a43826ac6aa403ae6a8acb6cf58239fbaf5d"
+        }
+      ]
+    },
+    {
+      "type": "generic T",
+      "metadataTypeId": 4
+    },
+    {
+      "type": "raw untyped ptr",
+      "metadataTypeId": 5
+    },
+    {
+      "type": "struct compolabs_sway_libs::signed_integers::i64::I64",
+      "metadataTypeId": 6,
+      "components": [
+        {
+          "name": "underlying",
+          "typeId": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0"
+        }
+      ]
+    },
+    {
+      "type": "struct std::address::Address",
+      "metadataTypeId": 7,
+      "components": [
+        {
+          "name": "bits",
+          "typeId": 0
+        }
+      ]
+    },
+    {
+      "type": "struct std::asset_id::AssetId",
+      "metadataTypeId": 8,
+      "components": [
+        {
+          "name": "bits",
+          "typeId": 0
+        }
+      ]
+    },
+    {
+      "type": "struct std::bytes::Bytes",
+      "metadataTypeId": 9,
+      "components": [
+        {
+          "name": "buf",
+          "typeId": 10
+        },
+        {
+          "name": "len",
+          "typeId": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0"
+        }
+      ]
+    },
+    {
+      "type": "struct std::bytes::RawBytes",
+      "metadataTypeId": 10,
+      "components": [
+        {
+          "name": "ptr",
+          "typeId": 5
+        },
+        {
+          "name": "cap",
+          "typeId": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0"
+        }
+      ]
+    },
+    {
+      "type": "struct std::contract_id::ContractId",
+      "metadataTypeId": 11,
+      "components": [
+        {
+          "name": "bits",
+          "typeId": 0
+        }
+      ]
+    },
+    {
+      "type": "struct std::vec::RawVec",
+      "metadataTypeId": 12,
+      "components": [
+        {
+          "name": "ptr",
+          "typeId": 5
+        },
+        {
+          "name": "cap",
+          "typeId": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0"
+        }
+      ],
+      "typeParameters": [
+        4
+      ]
+    },
+    {
+      "type": "struct std::vec::Vec",
+      "metadataTypeId": 13,
+      "components": [
+        {
+          "name": "buf",
+          "typeId": 12,
+          "typeArguments": [
+            {
+              "name": "",
+              "typeId": 4
+            }
+          ]
+        },
+        {
+          "name": "len",
+          "typeId": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0"
+        }
+      ],
+      "typeParameters": [
+        4
+      ]
+    }
+  ],
+  "functions": [
+    {
+      "inputs": [
+        {
+          "name": "distribution_threshold",
+          "concreteTypeId": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0"
+        }
+      ],
+      "name": "set_distribution_threshold",
+      "output": "2e38e77b22c314a449e91fafed92a43826ac6aa403ae6a8acb6cf58239fbaf5d",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "write"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "surplus_beneficiary",
+          "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
+        }
+      ],
+      "name": "set_surplus_beneficiary",
+      "output": "2e38e77b22c314a449e91fafed92a43826ac6aa403ae6a8acb6cf58239fbaf5d",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "write"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "price_update_data",
+          "concreteTypeId": "2601885b27af3627b8910876fc176d900cec2b16ec78c538f5f312e785d915f5"
+        }
+      ],
+      "name": "distribute_fee",
+      "output": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [],
+      "name": "get_insurance_fund_capacity",
+      "output": "c35f504fa0cf6c3c54066e2780bc4033982f9a802842793a014ba0f5c699d8ce",
+      "attributes": null
+    },
+    {
+      "inputs": [],
+      "name": "repay",
+      "output": "2e38e77b22c314a449e91fafed92a43826ac6aa403ae6a8acb6cf58239fbaf5d",
+      "attributes": null
+    }
+  ],
+  "loggedTypes": [
+    {
+      "logId": "10045983720988762007",
+      "concreteTypeId": "8b6a80f7e4e45f973997c8b186edc744828dc47f2aa5a35db94e34acc8fda371"
+    },
+    {
+      "logId": "5557842539076482339",
+      "concreteTypeId": "4d216c57b3357523323f59401c7355785b41bdf832f6e1106272186b94797038"
+    },
+    {
+      "logId": "10098701174489624218",
+      "concreteTypeId": "8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a"
+    }
+  ],
+  "messagesTypes": [],
+  "configurables": [
+    {
+      "name": "OWNER",
+      "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335",
+      "offset": 22504
+    },
+    {
+      "name": "USDC_ASSET",
+      "concreteTypeId": "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974",
+      "offset": 22576
+    },
+    {
+      "name": "PROXY_CONTRACT",
+      "concreteTypeId": "29c10735d33b5159f0c71ee1dbd17b36a3e69e41f00fab0d42e1bd9f428d8a54",
+      "offset": 22544
+    }
+  ]
+}
