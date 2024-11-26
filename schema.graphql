@@ -1,6 +1,14 @@
-# enum OrderType {
-#   Sell
-#   Buy
+enum MarketStatus {
+  Opened
+  Paused
+  Closed
+}
+
+# enum MarketEventIdentifier {
+#   MarketCreateEvent
+#   MarketCloseEvent
+#   CloMarketPauseEventsed
+#   MarketUnpauseEvent
 # }
 
 # enum OrderStatus {
@@ -32,7 +40,26 @@ type AccountBalanceChangeEvent {
   takerPositionSize: BigInt!
   takerOpenNotional: BigInt!
   lastTwPremiumGrowthGlobal: BigInt!
-  timestamp: String!
+  timestamp: BigInt!
+  txId: String! @index
+}
+
+type MarketEvent {
+  id: ID!
+  sender: String! @index
+  # market
+  assetId: String!
+  decimal: BigInt!
+  priceFeed: String!
+  imRatio: BigInt!
+  mmRatio: BigInt!
+  status: MarketStatus!
+  pausedIndexPrice: BigInt
+  pausedTimestamp: BigInt
+  closedPrice: BigInt
+
+  identifier: String!
+  timestamp: BigInt!
   txId: String! @index
 }
 

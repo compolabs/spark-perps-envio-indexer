@@ -4,14 +4,21 @@ networks:
   - id: 9889
     start_block: 0
     contracts:
-      - name: Account
+      - name: AccountBalance
         address:
           - 0xefad74ba7f8d09f5841c330a1199dc6bc7aef7712aa8344b35a7b984d5c9d7af
         abi_file_path: ./abis/account-balance.json
-        handler: ./src/OrderBookHandlers.ts
+        handler: ./src/PerpsHandlers.ts
         events:
           - name: OwedRealizedPnlChangeEvent
           - name: AccountBalanceChangeEvent
+      - name: ClearingHouse
+        address:
+          - 0x4d57cbd89c4dcfc384beeeeee31c0ab71fb0ffdd7203f340d50b8ce6e4757b43
+        abi_file_path: ./abis/clearing-house.json
+        handler: ./src/PerpsHandlers.ts
+        events:
+          - name: MarketEvent
             
             
             

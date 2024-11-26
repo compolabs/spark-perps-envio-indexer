@@ -12,5 +12,5 @@
     "skipLibCheck": true,
     "module": "CommonJS", 
   },
-  "include": ["src", "test", "src/handlers/depositEventHandler.ts"]
+  "include": ["src", "test", "src/account-balance-handlers/depositEventHandler.ts"]
 }
