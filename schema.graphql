@@ -27,7 +27,7 @@ type OwedRealizedPnlChangeEvent {
 
 type AccountBalanceChangeEvent {
   id: ID!
-  user: String! @index
+  trader: String! @index
   baseToken: String!
   takerPositionSize: BigInt!
   takerOpenNotional: BigInt!
