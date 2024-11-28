@@ -124,15 +124,18 @@ type ActiveOrder {
   timestamp: String!
 }
 
-type OpenEvent {
+type OpenOrderEvent {
   id: ID!
   market: String! @index
-  sender: String! @index
+
   trader: String @index
   orderId: String! @index
+  identifier: String!
   baseSize: BigInt
   price: BigInt
   txId: String! @index
+  contractTimestamp: BigInt!
+  timestamp: String!
 }
 
 type RemoveUncollaterizedEvent {

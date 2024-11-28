@@ -1,5 +1,4 @@
-import { ActiveOrder, activeOrder } from './../../generated/src/Types.gen';
-import { OrderEvent, PerpMarket, OpenEvent, RemoveUncollaterizedEvent, RemoveAllEvent, MatchEvent, FulfillEvent, Order } from "generated";
+import { OrderEvent, PerpMarket } from "generated";
 import { nanoid } from "nanoid";
 import { getISOTime } from '../utils';
 import { OpenEventHandler } from './orderOpenEventHandler';
@@ -37,9 +36,8 @@ PerpMarket.OrderEvent.handlerWithLoader({
 		};
 		context.OrderEvent.set(orderEvent);
 
-
 		if (event.params.identifier.case === "OrderOpenEvent") {
-			await OpenEventHandler(event, context, loaderReturn);
+			await OpenEventHandler(event, context, loaderReturn, orderEvent);
 		}
 
 	},

@@ -1,12 +1,21 @@
 import { nanoid } from "nanoid";
 import { getISOTime } from "../utils";
-import { Order, ActiveOrder, handlerContext } from "generated";
+import { Order, ActiveOrder, handlerContext, OrderEvent, OpenOrderEvent } from "generated";
 
 export const OpenEventHandler = async (
 	event: any,
 	context: handlerContext,
-	loaderReturn: { order: Order | undefined; activeOrder: ActiveOrder | undefined }
+	loaderReturn: { order: Order | undefined; activeOrder: ActiveOrder | undefined },
+	orderEvent: OrderEvent
 ) => {
+
+	const openOrderEvent: OpenOrderEvent = {
+		...orderEvent,
+		id: `openEvent-${nanoid()}`,
+	};
+	context.OpenOrderEvent.set(openOrderEvent);
+
+
 	if (event.params.order.case === 'Some') {
 		const order = loaderReturn.order;
 
