@@ -11,11 +11,11 @@ enum MarketStatus {
 #   MarketUnpauseEvent
 # }
 
-# enum OrderStatus {
-#   Active
-#   Closed
-#   Canceled
-# }
+enum OrderStatus {
+  Active
+  Closed
+  Canceled
+}
 
 # type User {
 #   id: ID!
@@ -62,6 +62,7 @@ type MarketEvent {
   timestamp: BigInt!
   txId: String! @index
 }
+############## PERP MARKET
 
 type TradeEvent {
   id: ID!
@@ -78,19 +79,49 @@ type TradeEvent {
 
   # timestamp: String!
   txId: String! @index
+  contractTimestamp: BigInt!
+  timestamp: String!
 }
 
 type OrderEvent {
   id: ID!
   market: String! @index
 
-  sender: String! @index
   trader: String @index
   orderId: String! @index
   identifier: String!
   baseSize: BigInt
   price: BigInt
   txId: String! @index
+  contractTimestamp: BigInt!
+  timestamp: String!
+}
+
+
+type Order {
+  id: ID!
+  market: String! @index
+  # asset: String! @index
+  baseSize: BigInt!
+  price: BigInt! @index
+  trader: String! @index
+  status: OrderStatus! @index
+  # initialAmount: BigInt!
+  contractTimestamp: BigInt!
+  timestamp: String!
+}
+
+type ActiveOrder {
+  id: ID!
+  market: String! @index
+  # asset: String! @index
+  baseSize: BigInt!
+  price: BigInt! @index
+  trader: String! @index
+  status: OrderStatus! @index
+  # initialAmount: BigInt!
+  contractTimestamp: BigInt!
+  timestamp: String!
 }
 
 type OpenEvent {
