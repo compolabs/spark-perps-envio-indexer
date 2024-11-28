@@ -2,6 +2,7 @@ import { ActiveOrder, activeOrder } from './../../generated/src/Types.gen';
 import { OrderEvent, PerpMarket, OpenEvent, RemoveUncollaterizedEvent, RemoveAllEvent, MatchEvent, FulfillEvent, Order } from "generated";
 import { nanoid } from "nanoid";
 import { getISOTime } from '../utils';
+import { OpenEventHandler } from './orderOpenEventHandler';
 
 PerpMarket.OrderEvent.handlerWithLoader({
 	loader: async ({ event, context }) => {
@@ -36,62 +37,9 @@ PerpMarket.OrderEvent.handlerWithLoader({
 		};
 		context.OrderEvent.set(orderEvent);
 
-		if (event.params.identifier.case === "OrderOpenEvent" && event.params.order.case === 'Some') {
-			const order = loaderReturn.order;
-			// const activeOrder = loaderReturn.activeOrder;
 
-			if (order) {
-
-				const updatedOrder: Order = {
-					...order,
-					baseSize: event.params.order.payload.base_size.underlying,
-					price: event.params.order.payload.price,
-					status: "Active",
-					timestamp: getISOTime(event.block.time)
-				};
-				context.Order.set(updatedOrder);
-
-				const updatedActiveOrder: ActiveOrder = {
-					...updatedOrder,
-				};
-				context.ActiveOrder.set(updatedActiveOrder);
-			} else {
-
-				const newOrder: Order = {
-					id: event.params.order_id,
-					market: event.srcAddress,
-					baseSize: event.params.order.payload.base_size.underlying,
-					price: event.params.order.payload.price,
-					trader: event.params.order.payload.trader.payload.bits,
-					contractTimestamp: event.params.timestamp,
-					timestamp: getISOTime(event.block.time),
-					status: "Active",
-				};
-				context.Order.set(newOrder);
-
-				const newActiveOrder: ActiveOrder = {
-					...newOrder,
-				};
-				context.ActiveOrder.set(newActiveOrder);
-			}
-		}
-		else if (event.params.identifier.case === "OrderOpenEvent" && event.params.order.case === 'None') {
-			const order = loaderReturn.order;
-			const activeOrder = loaderReturn.order;
-
-			if (order) {
-				const updatedOrder: Order = {
-					...order,
-					baseSize: 0n,
-					status: "Closed",
-					timestamp: getISOTime(event.block.time),
-				};
-				context.Order.set(updatedOrder);
-			}
-
-			if (activeOrder) {
-				context.ActiveOrder.deleteUnsafe(event.params.order_id);
-			}
+		if (event.params.identifier.case === "OrderOpenEvent") {
+			await OpenEventHandler(event, context, loaderReturn);
 		}
 
 	},
