@@ -4,6 +4,11 @@ enum MarketStatus {
   Closed
 }
 
+enum OrderType {
+  Sell
+  Buy
+}
+
 # enum MarketEventIdentifier {
 #   MarketCreateEvent
 #   MarketCloseEvent
@@ -105,19 +110,35 @@ type Order {
   baseSize: BigInt!
   price: BigInt! @index
   trader: String! @index
+  orderType: OrderType! @index
   status: OrderStatus! @index
   # initialAmount: BigInt!
   contractTimestamp: BigInt!
   timestamp: String!
 }
 
-type ActiveOrder {
+type ActiveSellOrder {
   id: ID!
   market: String! @index
   # asset: String! @index
   baseSize: BigInt!
   price: BigInt! @index
   trader: String! @index
+  orderType: OrderType! @index
+  status: OrderStatus! @index
+  # initialAmount: BigInt!
+  contractTimestamp: BigInt!
+  timestamp: String!
+}
+
+type ActiveBuyOrder {
+  id: ID!
+  market: String! @index
+  # asset: String! @index
+  baseSize: BigInt!
+  price: BigInt! @index
+  trader: String! @index
+  orderType: OrderType! @index
   status: OrderStatus! @index
   # initialAmount: BigInt!
   contractTimestamp: BigInt!
@@ -139,14 +160,17 @@ type OpenOrderEvent {
 }
 
 type RemoveUncollaterizedEvent {
-  id: ID!
+   id: ID!
   market: String! @index
-  sender: String! @index
+
   trader: String @index
   orderId: String! @index
+  identifier: String!
   baseSize: BigInt
   price: BigInt
   txId: String! @index
+  contractTimestamp: BigInt!
+  timestamp: String!
 }
 
 type RemoveEvent  {

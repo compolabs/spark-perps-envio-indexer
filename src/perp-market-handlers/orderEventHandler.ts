@@ -1,13 +1,19 @@
 import { OrderEvent, PerpMarket } from "generated";
 import { nanoid } from "nanoid";
-import { getISOTime } from '../utils';
+import { decodeI64, getISOTime } from '../utils';
 import { OpenEventHandler } from './orderOpenEventHandler';
+import { OrderRemoveUncollaterizedEventHandler } from "./orderRemoveUncollaterizedEventHandler";
 
 PerpMarket.OrderEvent.handlerWithLoader({
 	loader: async ({ event, context }) => {
 		const order = await context.Order.get(event.params.order_id)
-		const activeOrder = await context.ActiveOrder.get(event.params.order_id)
-		return { order, activeOrder };
+		return {
+			order,
+			activeOrder: order ? order.orderType === "Buy"
+				? await context.ActiveBuyOrder.get(event.params.order_id)
+				: await context.ActiveSellOrder.get(event.params.order_id)
+				: undefined,
+		};
 	},
 
 	handler: async ({ event, context, loaderReturn }) => {
@@ -23,7 +29,7 @@ PerpMarket.OrderEvent.handlerWithLoader({
 				: undefined,
 
 			baseSize: event.params.order.case === "Some"
-				? event.params.order.payload.base_size.underlying
+				? decodeI64(event.params.order.payload.base_size.underlying)
 				: undefined,
 
 			price: event.params.order.case === "Some"
@@ -38,6 +44,9 @@ PerpMarket.OrderEvent.handlerWithLoader({
 
 		if (event.params.identifier.case === "OrderOpenEvent") {
 			await OpenEventHandler(event, context, loaderReturn, orderEvent);
+		} else if (event.params.identifier.case === "OrderRemoveUncollaterizedEvent") {
+			await OrderRemoveUncollaterizedEventHandler(event, context, loaderReturn, orderEvent);
+
 		}
 
 	},
