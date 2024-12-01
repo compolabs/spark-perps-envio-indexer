@@ -2,7 +2,7 @@ import { OrderEvent, PerpMarket } from "generated";
 import { nanoid } from "nanoid";
 import { decodeI64, getISOTime } from '../utils';
 import { OpenEventHandler } from './orderOpenEventHandler';
-import { OrderRemoveUncollaterizedEventHandler } from "./orderRemoveUncollaterizedEventHandler";
+import { OrderRemoveEventHandler } from "./orderRemoveEventHandler";
 
 PerpMarket.OrderEvent.handlerWithLoader({
 	loader: async ({ event, context }) => {
@@ -44,9 +44,11 @@ PerpMarket.OrderEvent.handlerWithLoader({
 
 		if (event.params.identifier.case === "OrderOpenEvent") {
 			await OpenEventHandler(event, context, loaderReturn, orderEvent);
-		} else if (event.params.identifier.case === "OrderRemoveUncollaterizedEvent") {
-			await OrderRemoveUncollaterizedEventHandler(event, context, loaderReturn, orderEvent);
-
+		} else if (
+			event.params.identifier.case === "OrderRemoveUncollaterizedEvent" ||
+			event.params.identifier.case === "OrderRemoveEvent" ||
+			event.params.identifier.case === "OrderRemoveAllEvent") {
+			await OrderRemoveEventHandler(event, context, loaderReturn, orderEvent);
 		}
 
 	},

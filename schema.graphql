@@ -176,7 +176,6 @@ type RemoveUncollaterizedEvent {
 type RemoveEvent  {
   id: ID!
   market: String! @index
-  sender: String! @index
   trader: String @index
   orderId: String! @index
   baseSize: BigInt
@@ -187,7 +186,6 @@ type RemoveEvent  {
 type RemoveAllEvent  {
   id: ID!
   market: String! @index
-  sender: String! @index
   trader: String @index
   orderId: String! @index
   baseSize: BigInt
