@@ -26,6 +26,7 @@ export const OpenEventHandler = async (
 
 			const updatedOrder: Order = {
 				...order,
+				baseSizeI64: event.params.order.payload.base_size.underlying,
 				baseSize: decodeI64(event.params.order.payload.base_size.underlying),
 				orderType: baseSize > 0 ? "Buy" : "Sell",
 				timestamp: getISOTime(event.block.time),
@@ -52,7 +53,8 @@ export const OpenEventHandler = async (
 			const order: Order = {
 				id: event.params.order_id,
 				market: event.srcAddress,
-				baseSize: event.params.order.payload.base_size.underlying,
+				baseSizeI64: event.params.order.payload.base_size.underlying,
+				baseSize: decodeI64(event.params.order.payload.base_size.underlying),
 				price: event.params.order.payload.price,
 				trader: event.params.order.payload.trader.payload.bits,
 				orderType: baseSize > 0 ? "Buy" : "Sell",
@@ -79,6 +81,7 @@ export const OpenEventHandler = async (
 		if (order) {
 			const updatedOrder: Order = {
 				...order,
+				baseSizeI64: 0n,
 				baseSize: 0n,
 				status: "Closed",
 				timestamp: getISOTime(event.block.time),
@@ -86,7 +89,7 @@ export const OpenEventHandler = async (
 			context.Order.set(updatedOrder);
 		}
 
-		if (activeOrder && activeOrder.baseSize > 0) {
+		if (activeOrder && activeOrder.orderType === "Buy") {
 			context.ActiveBuyOrder.deleteUnsafe(event.params.order_id);
 		} else if (activeOrder) {
 			context.ActiveSellOrder.deleteUnsafe(event.params.order_id);

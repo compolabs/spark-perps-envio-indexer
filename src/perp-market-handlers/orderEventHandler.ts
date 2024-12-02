@@ -3,6 +3,7 @@ import { nanoid } from "nanoid";
 import { decodeI64, getISOTime } from '../utils';
 import { OpenEventHandler } from './orderOpenEventHandler';
 import { OrderRemoveEventHandler } from "./orderRemoveEventHandler";
+import { OrderMatchEventHandler } from "./orderMatchEventHandler";
 
 PerpMarket.OrderEvent.handlerWithLoader({
 	loader: async ({ event, context }) => {
@@ -28,8 +29,12 @@ PerpMarket.OrderEvent.handlerWithLoader({
 				? event.params.order.payload.trader.payload.bits
 				: undefined,
 
-			baseSize: event.params.order.case === "Some"
+			baseSizeI64: event.params.order.case === "Some"
 				? decodeI64(event.params.order.payload.base_size.underlying)
+				: undefined,
+
+			baseSize: event.params.order.case === "Some"
+				? event.params.order.payload.base_size.underlying
 				: undefined,
 
 			price: event.params.order.case === "Some"
@@ -49,6 +54,11 @@ PerpMarket.OrderEvent.handlerWithLoader({
 			event.params.identifier.case === "OrderRemoveEvent" ||
 			event.params.identifier.case === "OrderRemoveAllEvent") {
 			await OrderRemoveEventHandler(event, context, loaderReturn, orderEvent);
+		} else if (
+			event.params.identifier.case === "OrderMatchEvent" ||
+			event.params.identifier.case === "OrderFulfillEvent"
+		) {
+			await OrderMatchEventHandler(event, context, loaderReturn, orderEvent);
 		}
 
 	},

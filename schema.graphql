@@ -95,6 +95,7 @@ type OrderEvent {
   trader: String @index
   orderId: String! @index
   identifier: String!
+  baseSizeI64: BigInt
   baseSize: BigInt
   price: BigInt
   txId: String! @index
@@ -107,7 +108,8 @@ type Order {
   id: ID!
   market: String! @index
   # asset: String! @index
-  baseSize: BigInt!
+  baseSizeI64: BigInt
+  baseSize: BigInt
   price: BigInt! @index
   trader: String! @index
   orderType: OrderType! @index
@@ -121,7 +123,8 @@ type ActiveSellOrder {
   id: ID!
   market: String! @index
   # asset: String! @index
-  baseSize: BigInt!
+  baseSizeI64: BigInt
+  baseSize: BigInt
   price: BigInt! @index
   trader: String! @index
   orderType: OrderType! @index
@@ -135,7 +138,8 @@ type ActiveBuyOrder {
   id: ID!
   market: String! @index
   # asset: String! @index
-  baseSize: BigInt!
+  baseSizeI64: BigInt
+  baseSize: BigInt
   price: BigInt! @index
   trader: String! @index
   orderType: OrderType! @index
@@ -152,6 +156,7 @@ type OpenOrderEvent {
   trader: String @index
   orderId: String! @index
   identifier: String!
+  baseSizeI64: BigInt
   baseSize: BigInt
   price: BigInt
   txId: String! @index
@@ -160,12 +165,13 @@ type OpenOrderEvent {
 }
 
 type RemoveUncollaterizedEvent {
-   id: ID!
+  id: ID!
   market: String! @index
 
   trader: String @index
   orderId: String! @index
   identifier: String!
+  baseSizeI64: BigInt
   baseSize: BigInt
   price: BigInt
   txId: String! @index
@@ -178,6 +184,7 @@ type RemoveEvent  {
   market: String! @index
   trader: String @index
   orderId: String! @index
+  baseSizeI64: BigInt
   baseSize: BigInt
   price: BigInt
   txId: String! @index
@@ -188,6 +195,7 @@ type RemoveAllEvent  {
   market: String! @index
   trader: String @index
   orderId: String! @index
+  baseSizeI64: BigInt
   baseSize: BigInt
   price: BigInt
   txId: String! @index
@@ -196,22 +204,22 @@ type RemoveAllEvent  {
 type MatchEvent  {
   id: ID!
   market: String! @index
-  sender: String! @index
-  trader: String! @index
+  trader: String @index
   orderId: String! @index
-  baseSize: BigInt!
-  price: BigInt!
+  baseSizeI64: BigInt
+  baseSize: BigInt
+  price: BigInt
   txId: String! @index
 }
 
 type FulfillEvent  {
   id: ID!
   market: String! @index
-  sender: String! @index
-  trader: String! @index
+  trader: String @index
   orderId: String! @index
-  baseSize: BigInt!
-  price: BigInt!
+  baseSizeI64: BigInt
+  baseSize: BigInt
+  price: BigInt
   txId: String! @index
 }
 

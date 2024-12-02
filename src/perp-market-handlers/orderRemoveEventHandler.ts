@@ -35,6 +35,7 @@ export const OrderRemoveEventHandler = async (
 	if (order) {
 		const updatedOrder: Order = {
 			...order,
+			baseSizeI64: 0n,
 			baseSize: 0n,
 			status: "Canceled",
 			timestamp: getISOTime(event.block.time),
