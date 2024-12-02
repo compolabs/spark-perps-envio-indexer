@@ -30,11 +30,11 @@ PerpMarket.OrderEvent.handlerWithLoader({
 				: undefined,
 
 			baseSizeI64: event.params.order.case === "Some"
-				? decodeI64(event.params.order.payload.base_size.underlying)
+				? event.params.order.payload.base_size.underlying
 				: undefined,
 
 			baseSize: event.params.order.case === "Some"
-				? event.params.order.payload.base_size.underlying
+				? decodeI64(event.params.order.payload.base_size.underlying)
 				: undefined,
 
 			price: event.params.order.case === "Some"
@@ -58,7 +58,7 @@ PerpMarket.OrderEvent.handlerWithLoader({
 			event.params.identifier.case === "OrderMatchEvent" ||
 			event.params.identifier.case === "OrderFulfillEvent"
 		) {
-			await OrderMatchEventHandler(event, context, loaderReturn, orderEvent);
+			// await OrderMatchEventHandler(event, context, loaderReturn, orderEvent);
 		}
 
 	},

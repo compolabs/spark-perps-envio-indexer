@@ -27,6 +27,13 @@ networks:
         events:
           - name: TradeEvent
           - name: OrderEvent
+      - name: Vault
+        address:
+          - 0xf30e781e7face6a2860aeab8ec7e891a17e7149bcc969dfe2e88a4a5586caaa8
+        abi_file_path: ./abis/vault.json
+        handler: ./src/PerpsHandlers.ts
+        events:
+          - name: CollateralChangeEvent
       
             
             

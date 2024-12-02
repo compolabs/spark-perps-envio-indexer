@@ -30,6 +30,8 @@ enum OrderStatus {
 #   timestamp: String!
 # }
 
+############## AccountBalance
+
 type OwedRealizedPnlChangeEvent {
   id: ID!
   trader: String! @index
@@ -49,6 +51,8 @@ type AccountBalanceChangeEvent {
   txId: String! @index
 }
 
+############## ClearingHouse
+
 type MarketEvent {
   id: ID!
   sender: String! @index
@@ -67,7 +71,8 @@ type MarketEvent {
   timestamp: BigInt!
   txId: String! @index
 }
-############## PERP MARKET
+
+############## PerpMarket
 
 type TradeEvent {
   id: ID!
@@ -102,7 +107,6 @@ type OrderEvent {
   contractTimestamp: BigInt!
   timestamp: String!
 }
-
 
 type Order {
   id: ID!
@@ -223,78 +227,12 @@ type FulfillEvent  {
   txId: String! @index
 }
 
-# type ActiveSellOrder {
-#   id: ID!
-#   market: String! @index
-#   asset: String! @index
-#   amount: BigInt!
-#   orderType: OrderType! @index
-#   price: BigInt! @index
-#   user: String! @index
-#   status: OrderStatus! @index
-#   initialAmount: BigInt!
-#   timestamp: String!
-# }
+############## Vault 
 
-# type ActiveBuyOrder {
-#   id: ID!
-#   market: String! @index
-#   asset: String! @index
-#   amount: BigInt!
-#   orderType: OrderType! @index
-#   price: BigInt! @index
-#   user: String! @index
-#   status: OrderStatus! @index
-#   initialAmount: BigInt!
-#   timestamp: String!
-# }
-
-# type CancelOrderEvent {
-#   id: ID!
-#   market: String! @index
-#   user: String! @index
-#   orderId: String! @index
-#   baseAmount: BigInt!
-#   quoteAmount: BigInt!
-#   timestamp: String!
-#   txId: String! @index
-# }
-
-
-
-# type DepositEvent {
-#   id: ID!
-#   market: String! @index
-#   user: String! @index
-#   amount: BigInt!
-#   asset: String! @index
-#   baseAmount: BigInt!
-#   quoteAmount: BigInt!
-#   timestamp: String!
-#   txId: String! @index
-# }
-# type WithdrawEvent {
-#   id: ID!
-#   market: String! @index
-#   user: String! @index
-#   amount: BigInt!
-#   asset: String! @index
-#   baseAmount: BigInt!
-#   quoteAmount: BigInt! 
-#   timestamp: String!
-#   txId: String! @index
-# }
-
-# type WithdrawToMarketEvent {
-#   id: ID!
-#   market: String! @index
-#   toMarket: String! @index
-#   user: String! @index
-#   amount: BigInt!
-#   asset: String! @index
-#   baseAmount: BigInt!
-#   quoteAmount: BigInt! 
-#   timestamp: String!
-#   txId: String! @index
-# }
-
+type CollateralChangeEvent  {
+  id: ID!
+  market: String! @index
+  trader: String @index
+  newBalance: BigInt @index
+  txId: String! @index
+}
