@@ -1,4 +1,5 @@
-import { ClearingHouse, MarketEvent } from "generated";
+import { market } from './../../generated/src/Types.gen';
+import { ClearingHouse, Market, MarketEvent } from "generated";
 import { getISOTime } from "../utils";
 import { getHash } from "../utils";
 import { nanoid } from "nanoid";
@@ -15,8 +16,9 @@ ClearingHouse.MarketEvent.handlerWithLoader({
 	handler: async ({ event, context, loaderReturn }) => {
 		// Construct the cancelOrderEvent object and save in context for tracking
 		const marketEvent: MarketEvent = {
-			id: nanoid(),
+			id: `marketEvent-${nanoid()}`,
 			sender: event.params.sender.payload.bits,
+			market: event.srcAddress,
 			assetId: event.params.market.asset_id.bits,
 			decimal: BigInt(event.params.market.decimal),
 			priceFeed: event.params.market.price_feed,
@@ -34,9 +36,16 @@ ClearingHouse.MarketEvent.handlerWithLoader({
 				: undefined,
 
 			identifier: event.params.identifier.case,
-			timestamp: event.params.timestamp,
+			timestamp: getISOTime(event.block.time),
 			txId: event.transaction.id
 		};
 		context.MarketEvent.set(marketEvent);
+
+		const market: Market = {
+			...marketEvent,
+			id: event.srcAddress,
+			timestamp: getISOTime(event.block.time)
+		};
+		context.Market.set(market);
 	},
 });

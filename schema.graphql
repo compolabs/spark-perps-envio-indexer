@@ -67,7 +67,8 @@ type AccountBalanceChangeEvent {
 type MarketEvent {
   id: ID!
   sender: String! @index
-  # market
+  market: String! @index
+
   assetId: String!
   decimal: BigInt!
   priceFeed: String!
@@ -79,9 +80,28 @@ type MarketEvent {
   closedPrice: BigInt
 
   identifier: String!
-  timestamp: BigInt!
+  timestamp: String!
   txId: String! @index
 }
+
+type Market {
+  id: ID!
+
+  assetId: String!
+  decimal: BigInt!
+  priceFeed: String!
+  imRatio: BigInt!
+  mmRatio: BigInt!
+  status: MarketStatus!
+  pausedIndexPrice: BigInt
+  pausedTimestamp: BigInt
+  closedPrice: BigInt
+
+  identifier: String!
+  timestamp: String!
+}
+
+
 
 ############## PerpMarket
 
