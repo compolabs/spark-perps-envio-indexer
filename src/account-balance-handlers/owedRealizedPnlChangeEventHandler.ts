@@ -1,5 +1,5 @@
-import { AccountBalance, OwedRealizedPnlChangeEvent } from "generated";
-import { getISOTime } from "../utils";
+import { AccountBalance, OwedRealizedPnlChangeEvent, UserPnl } from "generated";
+import { decodeI64, getISOTime } from "../utils";
 import { getHash } from "../utils";
 import { nanoid } from "nanoid";
 
@@ -7,9 +7,8 @@ import { nanoid } from "nanoid";
 AccountBalance.OwedRealizedPnlChangeEvent.handlerWithLoader({
 	// Loader function to pre-fetch the user and order details for the specified market
 	loader: async ({ event, context }) => {
-		return {};
-	},
 
+	},
 
 	// Handler function that processes the order cancellation event and updates the order and balance data
 	handler: async ({ event, context, loaderReturn }) => {
@@ -17,10 +16,18 @@ AccountBalance.OwedRealizedPnlChangeEvent.handlerWithLoader({
 		const owedRealizedPnlChangeEvent: OwedRealizedPnlChangeEvent = {
 			id: nanoid(),
 			trader: event.params.trader.payload.bits,
-			owedRealizedPnl: event.params.owed_realized_pnl.underlying,
+			market: event.srcAddress,
+			owedRealizedPnl: decodeI64(event.params.owed_realized_pnl.underlying),
 			timestamp: getISOTime(event.block.time),
 			txId: event.transaction.id
 		};
 		context.OwedRealizedPnlChangeEvent.set(owedRealizedPnlChangeEvent);
+
+		const userPnl: UserPnl = {
+			...owedRealizedPnlChangeEvent,
+			id: getHash(`${event.params.trader.payload.bits}-${event.srcAddress}`),
+			timestamp: getISOTime(event.block.time)
+		};
+		context.UserPnl.set(userPnl);
 	},
 });

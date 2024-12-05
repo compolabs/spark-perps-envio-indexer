@@ -22,18 +22,28 @@ enum OrderStatus {
   Canceled
 }
 
-# type User {
-#   id: ID!
-#   active: Int!
-#   closed: Int!
-#   canceled: Int!
-#   timestamp: String!
-# }
-
+type UserPnl {
+  id: ID!
+  trader: String! @index
+  market: String! @index
+  owedRealizedPnl: BigInt! @index
+  timestamp: String!
+}
+type UserAccountBalance {
+  id: ID!
+  market: String! @index
+  trader: String! @index
+  baseToken: String!
+  takerPositionSize: BigInt!
+  takerOpenNotional: BigInt!
+  lastTwPremiumGrowthGlobal: BigInt!
+  timestamp: String!
+}
 ############## AccountBalance
 
 type OwedRealizedPnlChangeEvent {
   id: ID!
+  market: String! @index
   trader: String! @index
   owedRealizedPnl: BigInt!
   timestamp: String!
@@ -42,12 +52,13 @@ type OwedRealizedPnlChangeEvent {
 
 type AccountBalanceChangeEvent {
   id: ID!
+  market: String! @index
   trader: String! @index
   baseToken: String!
   takerPositionSize: BigInt!
   takerOpenNotional: BigInt!
   lastTwPremiumGrowthGlobal: BigInt!
-  timestamp: BigInt!
+  timestamp: String!
   txId: String! @index
 }
 
@@ -56,7 +67,8 @@ type AccountBalanceChangeEvent {
 type MarketEvent {
   id: ID!
   sender: String! @index
-  # market
+  market: String! @index
+
   assetId: String!
   decimal: BigInt!
   priceFeed: String!
@@ -68,9 +80,28 @@ type MarketEvent {
   closedPrice: BigInt
 
   identifier: String!
-  timestamp: BigInt!
+  timestamp: String!
   txId: String! @index
 }
+
+type Market {
+  id: ID!
+
+  assetId: String!
+  decimal: BigInt!
+  priceFeed: String!
+  imRatio: BigInt!
+  mmRatio: BigInt!
+  status: MarketStatus!
+  pausedIndexPrice: BigInt
+  pausedTimestamp: BigInt
+  closedPrice: BigInt
+
+  identifier: String!
+  timestamp: String!
+}
+
+
 
 ############## PerpMarket
 
@@ -235,4 +266,13 @@ type CollateralChangeEvent  {
   trader: String @index
   newBalance: BigInt @index
   txId: String! @index
+  timestamp: String!
+}
+
+type Collateral  {
+  id: ID!
+  market: String! @index
+  trader: String @index
+  newBalance: BigInt @index
+  timestamp: String!
 }
