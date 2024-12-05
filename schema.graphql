@@ -29,7 +29,16 @@ type UserPnl {
   owedRealizedPnl: BigInt! @index
   timestamp: String!
 }
-
+type UserAccountBalance {
+  id: ID!
+  market: String! @index
+  trader: String! @index
+  baseToken: String!
+  takerPositionSize: BigInt!
+  takerOpenNotional: BigInt!
+  lastTwPremiumGrowthGlobal: BigInt!
+  timestamp: String!
+}
 ############## AccountBalance
 
 type OwedRealizedPnlChangeEvent {
@@ -43,12 +52,13 @@ type OwedRealizedPnlChangeEvent {
 
 type AccountBalanceChangeEvent {
   id: ID!
+  market: String! @index
   trader: String! @index
   baseToken: String!
   takerPositionSize: BigInt!
   takerOpenNotional: BigInt!
   lastTwPremiumGrowthGlobal: BigInt!
-  timestamp: BigInt!
+  timestamp: String!
   txId: String! @index
 }
 
