@@ -22,18 +22,19 @@ enum OrderStatus {
   Canceled
 }
 
-# type User {
-#   id: ID!
-#   active: Int!
-#   closed: Int!
-#   canceled: Int!
-#   timestamp: String!
-# }
+type UserPnl {
+  id: ID!
+  trader: String! @index
+  market: String! @index
+  owedRealizedPnl: BigInt! @index
+  timestamp: String!
+}
 
 ############## AccountBalance
 
 type OwedRealizedPnlChangeEvent {
   id: ID!
+  market: String! @index
   trader: String! @index
   owedRealizedPnl: BigInt!
   timestamp: String!

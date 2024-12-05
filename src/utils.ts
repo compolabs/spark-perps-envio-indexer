@@ -9,12 +9,11 @@ export const getISOTime = (timeInSeconds: number) => {
 };
 
 export function decodeI64(underlying: bigint): bigint {
-	// Проверяем старший (63-й) бит
-	const isNegative = (underlying & (1n << 63n)) !== 0n;
+	const INDENT_I64 = BigInt("0x8000000000000000");
 
-	// Извлекаем абсолютное значение (младшие 63 бита)
-	const absValue = underlying & ~(1n << 63n);
-
-	// Возвращаем результат с учетом знака
-	return isNegative ? -absValue : absValue;
+	if (underlying >= INDENT_I64) {
+		return underlying - INDENT_I64;
+	} else {
+		return -(INDENT_I64 - underlying);
+	}
 }
