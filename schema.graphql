@@ -266,4 +266,13 @@ type CollateralChangeEvent  {
   trader: String @index
   newBalance: BigInt @index
   txId: String! @index
+  timestamp: String!
+}
+
+type Collateral  {
+  id: ID!
+  market: String! @index
+  trader: String @index
+  newBalance: BigInt @index
+  timestamp: String!
 }
