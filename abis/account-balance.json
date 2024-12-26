@@ -10,26 +10,30 @@
     {
       "type": "(struct compolabs_sway_libs::signed_integers::i64::I64, struct compolabs_sway_libs::signed_integers::i64::I64)",
       "concreteTypeId": "2dc9f1d874ea07098074d9faab0f3a78ab65b0a242a057f23fa7cc57eeda134e",
-      "metadataTypeId": 2
+      "metadataTypeId": 0
     },
     {
       "type": "(struct compolabs_sway_libs::signed_integers::i64::I64, struct compolabs_sway_libs::signed_integers::i64::I64, struct compolabs_sway_libs::signed_integers::i64::I64, u64)",
       "concreteTypeId": "18e6eeb4dc6c8adc7987e433a20e6f448393f0529643892c0a6196e5052544c9",
-      "metadataTypeId": 3
-    },
-    {
-      "type": "(struct compolabs_sway_libs::signed_integers::i64::I64, u64)",
-      "concreteTypeId": "615e425782085f675574878c7d432fe0923c5934f5b330fb2684c5005254a9d8",
-      "metadataTypeId": 1
+      "metadataTypeId": 2
     },
     {
       "type": "(struct std::asset_id::AssetId, struct account_balance_abi::data_structures::AccountBalance)",
       "concreteTypeId": "85124d4d4054de2e2cfb0d52db5dcf06cb063ee1b23de974ccd69adc4c843ee5",
-      "metadataTypeId": 0
+      "metadataTypeId": 1
+    },
+    {
+      "type": "bool",
+      "concreteTypeId": "b760f44fa5965c2474a3b471467a22c43185152129295af588b022ae50b50903"
     },
     {
       "type": "enum account_balance_abi::errors::Error",
       "concreteTypeId": "8763a76d860a0dc464f395e8b6eb87d38360622db2ad34851c7ac8ce1e57df41",
+      "metadataTypeId": 4
+    },
+    {
+      "type": "enum standards::src5::AccessError",
+      "concreteTypeId": "3f702ea3351c9c1ece2b84048006c8034a24cbc2bad2e740d0412b4172951d3d",
       "metadataTypeId": 5
     },
     {
@@ -43,34 +47,39 @@
       "metadataTypeId": 9
     },
     {
+      "type": "struct account_balance_abi::data_structures::Funding",
+      "concreteTypeId": "6ef48c093dad6d00d9213e4d1538cadfa085d033fcaae26e54261c4c478a5746",
+      "metadataTypeId": 10
+    },
+    {
       "type": "struct compolabs_sway_libs::signed_integers::i64::I64",
       "concreteTypeId": "c35f504fa0cf6c3c54066e2780bc4033982f9a802842793a014ba0f5c699d8ce",
-      "metadataTypeId": 10
+      "metadataTypeId": 11
     },
     {
       "type": "struct events::AccountBalanceChangeEvent",
       "concreteTypeId": "76814460f2b5ce69a0885186c9e4f655a646c682bd0112b276bbf3d6b6c86b6b",
-      "metadataTypeId": 11
+      "metadataTypeId": 12
     },
     {
       "type": "struct events::OwedRealizedPnlChangeEvent",
       "concreteTypeId": "0a687bf2590a0714c134c743325abd1f1cfc20e81839bab254749129a8e1c58c",
-      "metadataTypeId": 12
+      "metadataTypeId": 13
     },
     {
       "type": "struct std::asset_id::AssetId",
       "concreteTypeId": "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974",
-      "metadataTypeId": 14
+      "metadataTypeId": 15
     },
     {
       "type": "struct std::contract_id::ContractId",
       "concreteTypeId": "29c10735d33b5159f0c71ee1dbd17b36a3e69e41f00fab0d42e1bd9f428d8a54",
-      "metadataTypeId": 15
+      "metadataTypeId": 16
     },
     {
       "type": "struct std::vec::Vec<(struct std::asset_id::AssetId, struct account_balance_abi::data_structures::AccountBalance)>",
       "concreteTypeId": "3956ef73fc22281580d20415cdb2174205b20b76ae2b1a1c5c3d1fee942cf097",
-      "metadataTypeId": 17,
+      "metadataTypeId": 18,
       "typeArguments": [
         "85124d4d4054de2e2cfb0d52db5dcf06cb063ee1b23de974ccd69adc4c843ee5"
       ]
@@ -78,10 +87,14 @@
     {
       "type": "struct std::vec::Vec<struct std::asset_id::AssetId>",
       "concreteTypeId": "8b2275934873f381a769c82334e6f66595eeb350d8b2dd012eef4d9bb117942b",
-      "metadataTypeId": 17,
+      "metadataTypeId": 18,
       "typeArguments": [
         "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974"
       ]
+    },
+    {
+      "type": "u32",
+      "concreteTypeId": "d7649d428b9ff33d188ecbf38a7e4d8fd167fa01b2e10fe9a8f9308e52f1d7cc"
     },
     {
       "type": "u64",
@@ -95,11 +108,11 @@
       "components": [
         {
           "name": "__tuple_element",
-          "typeId": 14
+          "typeId": 11
         },
         {
           "name": "__tuple_element",
-          "typeId": 9
+          "typeId": 11
         }
       ]
     },
@@ -109,43 +122,29 @@
       "components": [
         {
           "name": "__tuple_element",
-          "typeId": 10
+          "typeId": 15
         },
         {
           "name": "__tuple_element",
-          "typeId": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0"
-        }
-      ]
-    },
-    {
-      "type": "(_, _)",
-      "metadataTypeId": 2,
-      "components": [
-        {
-          "name": "__tuple_element",
-          "typeId": 10
-        },
-        {
-          "name": "__tuple_element",
-          "typeId": 10
+          "typeId": 9
         }
       ]
     },
     {
       "type": "(_, _, _, _)",
-      "metadataTypeId": 3,
+      "metadataTypeId": 2,
       "components": [
         {
           "name": "__tuple_element",
-          "typeId": 10
+          "typeId": 11
         },
         {
           "name": "__tuple_element",
-          "typeId": 10
+          "typeId": 11
         },
         {
           "name": "__tuple_element",
-          "typeId": 10
+          "typeId": 11
         },
         {
           "name": "__tuple_element",
@@ -155,11 +154,11 @@
     },
     {
       "type": "b256",
-      "metadataTypeId": 4
+      "metadataTypeId": 3
     },
     {
       "type": "enum account_balance_abi::errors::Error",
-      "metadataTypeId": 5,
+      "metadataTypeId": 4,
       "components": [
         {
           "name": "AccessDenied",
@@ -167,6 +166,20 @@
         },
         {
           "name": "NotEnoughFreeCollateralByImRatio",
+          "typeId": "2e38e77b22c314a449e91fafed92a43826ac6aa403ae6a8acb6cf58239fbaf5d"
+        },
+        {
+          "name": "ZeroPrice",
+          "typeId": "2e38e77b22c314a449e91fafed92a43826ac6aa403ae6a8acb6cf58239fbaf5d"
+        }
+      ]
+    },
+    {
+      "type": "enum standards::src5::AccessError",
+      "metadataTypeId": 5,
+      "components": [
+        {
+          "name": "NotOwner",
           "typeId": "2e38e77b22c314a449e91fafed92a43826ac6aa403ae6a8acb6cf58239fbaf5d"
         }
       ]
@@ -177,11 +190,11 @@
       "components": [
         {
           "name": "Address",
-          "typeId": 13
+          "typeId": 14
         },
         {
           "name": "ContractId",
-          "typeId": 15
+          "typeId": 16
         }
       ]
     },
@@ -199,21 +212,35 @@
       "components": [
         {
           "name": "taker_position_size",
-          "typeId": 10
+          "typeId": 11
         },
         {
           "name": "taker_open_notional",
-          "typeId": 10
+          "typeId": 11
         },
         {
           "name": "last_tw_premium_growth_global",
-          "typeId": 10
+          "typeId": 11
+        }
+      ]
+    },
+    {
+      "type": "struct account_balance_abi::data_structures::Funding",
+      "metadataTypeId": 10,
+      "components": [
+        {
+          "name": "last_funding_growth_global",
+          "typeId": 11
+        },
+        {
+          "name": "last_settled_timestamp",
+          "typeId": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0"
         }
       ]
     },
     {
       "type": "struct compolabs_sway_libs::signed_integers::i64::I64",
-      "metadataTypeId": 10,
+      "metadataTypeId": 11,
       "components": [
         {
           "name": "underlying",
@@ -223,7 +250,7 @@
     },
     {
       "type": "struct events::AccountBalanceChangeEvent",
-      "metadataTypeId": 11,
+      "metadataTypeId": 12,
       "components": [
         {
           "name": "trader",
@@ -231,7 +258,7 @@
         },
         {
           "name": "base_token",
-          "typeId": 14
+          "typeId": 15
         },
         {
           "name": "account_balance",
@@ -245,7 +272,7 @@
     },
     {
       "type": "struct events::OwedRealizedPnlChangeEvent",
-      "metadataTypeId": 12,
+      "metadataTypeId": 13,
       "components": [
         {
           "name": "trader",
@@ -253,43 +280,43 @@
         },
         {
           "name": "owed_realized_pnl",
-          "typeId": 10
+          "typeId": 11
         }
       ]
     },
     {
       "type": "struct std::address::Address",
-      "metadataTypeId": 13,
+      "metadataTypeId": 14,
       "components": [
         {
           "name": "bits",
-          "typeId": 4
+          "typeId": 3
         }
       ]
     },
     {
       "type": "struct std::asset_id::AssetId",
-      "metadataTypeId": 14,
+      "metadataTypeId": 15,
       "components": [
         {
           "name": "bits",
-          "typeId": 4
+          "typeId": 3
         }
       ]
     },
     {
       "type": "struct std::contract_id::ContractId",
-      "metadataTypeId": 15,
+      "metadataTypeId": 16,
       "components": [
         {
           "name": "bits",
-          "typeId": 4
+          "typeId": 3
         }
       ]
     },
     {
       "type": "struct std::vec::RawVec",
-      "metadataTypeId": 16,
+      "metadataTypeId": 17,
       "components": [
         {
           "name": "ptr",
@@ -306,11 +333,11 @@
     },
     {
       "type": "struct std::vec::Vec",
-      "metadataTypeId": 17,
+      "metadataTypeId": 18,
       "components": [
         {
           "name": "buf",
-          "typeId": 16,
+          "typeId": 17,
           "typeArguments": [
             {
               "name": "",
@@ -364,7 +391,7 @@
           "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
         }
       ],
-      "name": "execute_trade",
+      "name": "execute_trade_a",
       "output": "2e38e77b22c314a449e91fafed92a43826ac6aa403ae6a8acb6cf58239fbaf5d",
       "attributes": [
         {
@@ -387,7 +414,7 @@
           "concreteTypeId": "c35f504fa0cf6c3c54066e2780bc4033982f9a802842793a014ba0f5c699d8ce"
         }
       ],
-      "name": "modify_owed_realized_pnl",
+      "name": "modify_owed_realized_pnl_a",
       "output": "2e38e77b22c314a449e91fafed92a43826ac6aa403ae6a8acb6cf58239fbaf5d",
       "attributes": [
         {
@@ -418,7 +445,7 @@
           "concreteTypeId": "c35f504fa0cf6c3c54066e2780bc4033982f9a802842793a014ba0f5c699d8ce"
         }
       ],
-      "name": "modify_position",
+      "name": "modify_position_a",
       "output": "2e38e77b22c314a449e91fafed92a43826ac6aa403ae6a8acb6cf58239fbaf5d",
       "attributes": [
         {
@@ -441,7 +468,7 @@
           "concreteTypeId": "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974"
         }
       ],
-      "name": "register_base_token",
+      "name": "register_base_token_a",
       "output": "2e38e77b22c314a449e91fafed92a43826ac6aa403ae6a8acb6cf58239fbaf5d",
       "attributes": [
         {
@@ -460,7 +487,7 @@
           "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
         }
       ],
-      "name": "settle_all_funding",
+      "name": "settle_all_funding_a",
       "output": "2e38e77b22c314a449e91fafed92a43826ac6aa403ae6a8acb6cf58239fbaf5d",
       "attributes": [
         {
@@ -479,7 +506,7 @@
           "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
         }
       ],
-      "name": "settle_bad_debt",
+      "name": "settle_bad_debt_a",
       "output": "2e38e77b22c314a449e91fafed92a43826ac6aa403ae6a8acb6cf58239fbaf5d",
       "attributes": [
         {
@@ -502,7 +529,7 @@
           "concreteTypeId": "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974"
         }
       ],
-      "name": "settle_funding",
+      "name": "settle_funding_a",
       "output": "2e38e77b22c314a449e91fafed92a43826ac6aa403ae6a8acb6cf58239fbaf5d",
       "attributes": [
         {
@@ -521,7 +548,7 @@
           "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
         }
       ],
-      "name": "settle_owed_realized_pnl",
+      "name": "settle_owed_realized_pnl_a",
       "output": "c35f504fa0cf6c3c54066e2780bc4033982f9a802842793a014ba0f5c699d8ce",
       "attributes": [
         {
@@ -544,7 +571,7 @@
           "concreteTypeId": "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974"
         }
       ],
-      "name": "settle_position_in_closed_market",
+      "name": "settle_position_in_closed_market_a",
       "output": "18e6eeb4dc6c8adc7987e433a20e6f448393f0529643892c0a6196e5052544c9",
       "attributes": [
         {
@@ -563,7 +590,7 @@
           "concreteTypeId": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0"
         }
       ],
-      "name": "update_insurance_fund_fee_share",
+      "name": "update_insurance_fund_fee_share_a",
       "output": "2e38e77b22c314a449e91fafed92a43826ac6aa403ae6a8acb6cf58239fbaf5d",
       "attributes": [
         {
@@ -581,7 +608,7 @@
           "concreteTypeId": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0"
         }
       ],
-      "name": "update_max_funding_rate",
+      "name": "update_max_funding_rate_a",
       "output": "2e38e77b22c314a449e91fafed92a43826ac6aa403ae6a8acb6cf58239fbaf5d",
       "attributes": [
         {
@@ -599,7 +626,7 @@
           "concreteTypeId": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0"
         }
       ],
-      "name": "update_protocol_fee_rate",
+      "name": "update_protocol_fee_rate_a",
       "output": "2e38e77b22c314a449e91fafed92a43826ac6aa403ae6a8acb6cf58239fbaf5d",
       "attributes": [
         {
@@ -619,36 +646,9 @@
         {
           "name": "base_token",
           "concreteTypeId": "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974"
-        },
-        {
-          "name": "last_tw_premium_growth_global",
-          "concreteTypeId": "c35f504fa0cf6c3c54066e2780bc4033982f9a802842793a014ba0f5c699d8ce"
         }
       ],
-      "name": "update_tw_premium_growth_global",
-      "output": "2e38e77b22c314a449e91fafed92a43826ac6aa403ae6a8acb6cf58239fbaf5d",
-      "attributes": [
-        {
-          "name": "storage",
-          "arguments": [
-            "read",
-            "write"
-          ]
-        }
-      ]
-    },
-    {
-      "inputs": [
-        {
-          "name": "trader",
-          "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
-        },
-        {
-          "name": "base_token",
-          "concreteTypeId": "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974"
-        }
-      ],
-      "name": "get_account_balance",
+      "name": "get_account_balance_a",
       "output": "679c3b8c7552bd8aa3e04c230be4c0dcb6a3a3a4cc0db1103c7e2da7ab9085ca",
       "attributes": [
         {
@@ -666,7 +666,25 @@
           "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
         }
       ],
-      "name": "get_all_pending_funding_payment",
+      "name": "get_account_collateral_values_a",
+      "output": "2dc9f1d874ea07098074d9faab0f3a78ab65b0a242a057f23fa7cc57eeda134e",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "trader",
+          "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
+        }
+      ],
+      "name": "get_all_pending_funding_payment_a",
       "output": "c35f504fa0cf6c3c54066e2780bc4033982f9a802842793a014ba0f5c699d8ce",
       "attributes": [
         {
@@ -684,7 +702,7 @@
           "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
         }
       ],
-      "name": "get_all_trader_positions",
+      "name": "get_all_trader_positions_a",
       "output": "3956ef73fc22281580d20415cdb2174205b20b76ae2b1a1c5c3d1fee942cf097",
       "attributes": [
         {
@@ -702,8 +720,48 @@
           "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
         }
       ],
-      "name": "get_base_tokens",
+      "name": "get_base_tokens_a",
       "output": "8b2275934873f381a769c82334e6f66595eeb350d8b2dd012eef4d9bb117942b",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "trader",
+          "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
+        }
+      ],
+      "name": "get_free_collateral_a",
+      "output": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "trader",
+          "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
+        },
+        {
+          "name": "token",
+          "concreteTypeId": "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974"
+        }
+      ],
+      "name": "get_free_collateral_by_token_a",
+      "output": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0",
       "attributes": [
         {
           "name": "storage",
@@ -720,8 +778,8 @@
           "concreteTypeId": "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974"
         }
       ],
-      "name": "get_funding",
-      "output": "615e425782085f675574878c7d432fe0923c5934f5b330fb2684c5005254a9d8",
+      "name": "get_funding_a",
+      "output": "6ef48c093dad6d00d9213e4d1538cadfa085d033fcaae26e54261c4c478a5746",
       "attributes": [
         {
           "name": "storage",
@@ -742,7 +800,7 @@
           "concreteTypeId": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0"
         }
       ],
-      "name": "get_funding_delta",
+      "name": "get_funding_delta_a",
       "output": "c35f504fa0cf6c3c54066e2780bc4033982f9a802842793a014ba0f5c699d8ce",
       "attributes": [
         {
@@ -760,7 +818,7 @@
           "concreteTypeId": "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974"
         }
       ],
-      "name": "get_funding_growth_global",
+      "name": "get_funding_growth_global_a",
       "output": "c35f504fa0cf6c3c54066e2780bc4033982f9a802842793a014ba0f5c699d8ce",
       "attributes": [
         {
@@ -778,7 +836,7 @@
           "concreteTypeId": "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974"
         }
       ],
-      "name": "get_funding_rate",
+      "name": "get_funding_rate_a",
       "output": "c35f504fa0cf6c3c54066e2780bc4033982f9a802842793a014ba0f5c699d8ce",
       "attributes": [
         {
@@ -804,7 +862,7 @@
           "concreteTypeId": "c35f504fa0cf6c3c54066e2780bc4033982f9a802842793a014ba0f5c699d8ce"
         }
       ],
-      "name": "get_liquidatable_position_size",
+      "name": "get_liquidatable_position_size_a",
       "output": "c35f504fa0cf6c3c54066e2780bc4033982f9a802842793a014ba0f5c699d8ce",
       "attributes": [
         {
@@ -822,7 +880,7 @@
           "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
         }
       ],
-      "name": "get_margin_requirement",
+      "name": "get_margin_requirement_a",
       "output": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0",
       "attributes": [
         {
@@ -844,7 +902,25 @@
           "concreteTypeId": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0"
         }
       ],
-      "name": "get_margin_requirement_for_liquidation",
+      "name": "get_margin_requirement_for_liquidation_a",
+      "output": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "trader",
+          "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
+        }
+      ],
+      "name": "get_max_repaid_settlement_a",
       "output": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0",
       "attributes": [
         {
@@ -866,7 +942,7 @@
           "concreteTypeId": "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974"
         }
       ],
-      "name": "get_pending_funding_payment",
+      "name": "get_pending_funding_payment_a",
       "output": "2dc9f1d874ea07098074d9faab0f3a78ab65b0a242a057f23fa7cc57eeda134e",
       "attributes": [
         {
@@ -884,7 +960,7 @@
           "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
         }
       ],
-      "name": "get_pnl",
+      "name": "get_pnl_a",
       "output": "2dc9f1d874ea07098074d9faab0f3a78ab65b0a242a057f23fa7cc57eeda134e",
       "attributes": [
         {
@@ -897,7 +973,7 @@
     },
     {
       "inputs": [],
-      "name": "get_protocol_fee_rate",
+      "name": "get_protocol_fee_rate_a",
       "output": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0",
       "attributes": [
         {
@@ -915,29 +991,7 @@
           "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
         }
       ],
-      "name": "get_settlement_token_balance_and_unrealized_pnl",
-      "output": "2dc9f1d874ea07098074d9faab0f3a78ab65b0a242a057f23fa7cc57eeda134e",
-      "attributes": [
-        {
-          "name": "storage",
-          "arguments": [
-            "read"
-          ]
-        }
-      ]
-    },
-    {
-      "inputs": [
-        {
-          "name": "trader",
-          "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
-        },
-        {
-          "name": "settlement_token_collateral",
-          "concreteTypeId": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0"
-        }
-      ],
-      "name": "get_settlement_token_balance_and_unrealized_pnl_by_vault",
+      "name": "get_settlement_token_balance_and_unrealized_pnl_a",
       "output": "2dc9f1d874ea07098074d9faab0f3a78ab65b0a242a057f23fa7cc57eeda134e",
       "attributes": [
         {
@@ -959,7 +1013,7 @@
           "concreteTypeId": "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974"
         }
       ],
-      "name": "get_taker_open_notional",
+      "name": "get_taker_open_notional_a",
       "output": "c35f504fa0cf6c3c54066e2780bc4033982f9a802842793a014ba0f5c699d8ce",
       "attributes": [
         {
@@ -981,7 +1035,7 @@
           "concreteTypeId": "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974"
         }
       ],
-      "name": "get_taker_position_size",
+      "name": "get_taker_position_size_a",
       "output": "c35f504fa0cf6c3c54066e2780bc4033982f9a802842793a014ba0f5c699d8ce",
       "attributes": [
         {
@@ -999,7 +1053,7 @@
           "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
         }
       ],
-      "name": "get_total_abs_position_value",
+      "name": "get_total_abs_position_value_a",
       "output": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0",
       "attributes": [
         {
@@ -1021,8 +1075,26 @@
           "concreteTypeId": "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974"
         }
       ],
-      "name": "get_total_position_value",
+      "name": "get_total_position_value_a",
       "output": "c35f504fa0cf6c3c54066e2780bc4033982f9a802842793a014ba0f5c699d8ce",
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "trader",
+          "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335"
+        }
+      ],
+      "name": "is_liquidatable_a",
+      "output": "b760f44fa5965c2474a3b471467a22c43185152129295af588b022ae50b50903",
       "attributes": [
         {
           "name": "storage",
@@ -1045,29 +1117,48 @@
     {
       "logId": "8539181551650721385",
       "concreteTypeId": "76814460f2b5ce69a0885186c9e4f655a646c682bd0112b276bbf3d6b6c86b6b"
+    },
+    {
+      "logId": "4571204900286667806",
+      "concreteTypeId": "3f702ea3351c9c1ece2b84048006c8034a24cbc2bad2e740d0412b4172951d3d"
     }
   ],
   "messagesTypes": [],
   "configurables": [
     {
-      "name": "PROXY_CONTRACT",
-      "concreteTypeId": "29c10735d33b5159f0c71ee1dbd17b36a3e69e41f00fab0d42e1bd9f428d8a54",
-      "offset": 80856
-    },
-    {
       "name": "FULLY_CLOSED_RATIO",
       "concreteTypeId": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0",
-      "offset": 80848
+      "offset": 84864
     },
     {
       "name": "SETTLEMENT_TOKEN",
       "concreteTypeId": "c0710b6731b1dd59799cf6bef33eee3b3b04a2e40e80a0724090215bbf2ca974",
-      "offset": 80888
+      "offset": 84904
     },
     {
       "name": "DUST",
       "concreteTypeId": "1506e6f44c1d6291cdf46395a8e573276a4fa79e8ace3fc891e092ef32d1b0a0",
-      "offset": 80840
+      "offset": 84856
+    },
+    {
+      "name": "VERSION",
+      "concreteTypeId": "d7649d428b9ff33d188ecbf38a7e4d8fd167fa01b2e10fe9a8f9308e52f1d7cc",
+      "offset": 85008
+    },
+    {
+      "name": "VAULT",
+      "concreteTypeId": "29c10735d33b5159f0c71ee1dbd17b36a3e69e41f00fab0d42e1bd9f428d8a54",
+      "offset": 84976
+    },
+    {
+      "name": "INSURANCE_FUND",
+      "concreteTypeId": "29c10735d33b5159f0c71ee1dbd17b36a3e69e41f00fab0d42e1bd9f428d8a54",
+      "offset": 84872
+    },
+    {
+      "name": "TREASURY",
+      "concreteTypeId": "ab7cd04e05be58e3fc15d424c2c4a57f824a2a2d97d67252440a3925ebdc1335",
+      "offset": 84936
     }
   ]
 }

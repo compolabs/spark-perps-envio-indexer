@@ -1,11 +1,10 @@
-import { market } from './../../generated/src/Types.gen';
-import { ClearingHouse, Market, MarketEvent } from "generated";
+import { Market, MarketEvent } from 'generated/src/Types.gen';
 import { getISOTime } from "../utils";
-import { getHash } from "../utils";
 import { nanoid } from "nanoid";
+import { PerpMarket } from 'generated';
 
 // Define a handler for the CancelOrderEvent within a specific market
-ClearingHouse.MarketEvent.handlerWithLoader({
+PerpMarket.MarketEvent.handlerWithLoader({
 	// Loader function to pre-fetch the user and order details for the specified market
 	loader: async ({ event, context }) => {
 		return {};
@@ -31,7 +30,7 @@ ClearingHouse.MarketEvent.handlerWithLoader({
 			pausedTimestamp: event.params.market.paused_timestamp.case === "Some"
 				? event.params.market.paused_timestamp.payload
 				: undefined,
-			closedPrice: event.params.market.closed_price.case === "Some"	
+			closedPrice: event.params.market.closed_price.case === "Some"
 				? event.params.market.closed_price.payload
 				: undefined,
 

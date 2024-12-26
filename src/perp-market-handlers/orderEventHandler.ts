@@ -58,7 +58,7 @@ PerpMarket.OrderEvent.handlerWithLoader({
 			event.params.identifier.case === "OrderMatchEvent" ||
 			event.params.identifier.case === "OrderFulfillEvent"
 		) {
-			// await OrderMatchEventHandler(event, context, loaderReturn, orderEvent);
+			await OrderMatchEventHandler(event, context, loaderReturn, orderEvent);
 		}
 
 	},

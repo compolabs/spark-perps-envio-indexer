@@ -62,7 +62,7 @@ type AccountBalanceChangeEvent {
   txId: String! @index
 }
 
-############## ClearingHouse
+############## PerpMarket
 
 type MarketEvent {
   id: ID!
@@ -103,7 +103,6 @@ type Market {
 
 
 
-############## PerpMarket
 
 type TradeEvent {
   id: ID!
