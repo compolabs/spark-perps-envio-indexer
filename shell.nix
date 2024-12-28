@@ -3,7 +3,7 @@
 pkgs.mkShell {
   buildInputs = with pkgs; [
     nodejs 
-    (nodePackages.pnpm.override { version = "8.6.0"; }) 
+    nodePackages.pnpm
   ];
 
   shellHook = ''
