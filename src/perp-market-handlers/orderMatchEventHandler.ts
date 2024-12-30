@@ -80,6 +80,7 @@ export const OrderMatchEventHandler = async (
 							...activeOrder,
 							baseSizeI64: baseSizeI64,
 							baseSize: baseSize,
+							timestamp: getISOTime(event.block.time),
 						};
 						context.ActiveBuyOrder.set(updatedActiveBuyOrder);
 					} else if (order.orderType === "Sell") {
@@ -87,6 +88,7 @@ export const OrderMatchEventHandler = async (
 							...activeOrder,
 							baseSizeI64: baseSizeI64,
 							baseSize: baseSize,
+							timestamp: getISOTime(event.block.time),
 						};
 						context.ActiveSellOrder.set(updatedActiveSellOrder);
 					}

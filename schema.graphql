@@ -222,6 +222,7 @@ type RemoveEvent  {
   baseSize: BigInt
   price: BigInt
   txId: String! @index
+  timestamp: String!
 }
 
 type RemoveAllEvent  {
@@ -233,6 +234,7 @@ type RemoveAllEvent  {
   baseSize: BigInt
   price: BigInt
   txId: String! @index
+  timestamp: String!
 }
 
 type MatchEvent  {
@@ -244,6 +246,7 @@ type MatchEvent  {
   baseSize: BigInt
   price: BigInt
   txId: String! @index
+  timestamp: String!
 }
 
 type FulfillEvent  {
@@ -255,6 +258,7 @@ type FulfillEvent  {
   baseSize: BigInt
   price: BigInt
   txId: String! @index
+  timestamp: String!
 }
 
 ############## Vault 
