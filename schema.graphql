@@ -119,7 +119,7 @@ type TradeEvent {
 
   # timestamp: String!
   txId: String! @index
-  contractTimestamp: BigInt!
+  # contractTimestamp: BigInt!
   timestamp: String!
 }
 
@@ -134,7 +134,7 @@ type OrderEvent {
   baseSize: BigInt
   price: BigInt
   txId: String! @index
-  contractTimestamp: BigInt!
+  # contractTimestamp: BigInt!
   timestamp: String!
 }
 
@@ -142,14 +142,14 @@ type Order {
   id: ID!
   market: String! @index
   # asset: String! @index
-  baseSizeI64: BigInt
-  baseSize: BigInt
+  baseSizeI64: BigInt!
+  baseSize: BigInt!
   price: BigInt! @index
   trader: String! @index
   orderType: OrderType! @index
   status: OrderStatus! @index
   # initialAmount: BigInt!
-  contractTimestamp: BigInt!
+  # contractTimestamp: BigInt!
   timestamp: String!
 }
 
@@ -164,7 +164,7 @@ type ActiveSellOrder {
   orderType: OrderType! @index
   status: OrderStatus! @index
   # initialAmount: BigInt!
-  contractTimestamp: BigInt!
+  # contractTimestamp: BigInt!
   timestamp: String!
 }
 
@@ -179,7 +179,7 @@ type ActiveBuyOrder {
   orderType: OrderType! @index
   status: OrderStatus! @index
   # initialAmount: BigInt!
-  contractTimestamp: BigInt!
+  # contractTimestamp: BigInt!
   timestamp: String!
 }
 
@@ -194,7 +194,7 @@ type OpenOrderEvent {
   baseSize: BigInt
   price: BigInt
   txId: String! @index
-  contractTimestamp: BigInt!
+  # contractTimestamp: BigInt!
   timestamp: String!
 }
 
@@ -209,7 +209,7 @@ type RemoveUncollaterizedEvent {
   baseSize: BigInt
   price: BigInt
   txId: String! @index
-  contractTimestamp: BigInt!
+  # contractTimestamp: BigInt!
   timestamp: String!
 }
 

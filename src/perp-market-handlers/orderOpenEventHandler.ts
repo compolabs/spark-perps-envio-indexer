@@ -58,7 +58,7 @@ export const OpenEventHandler = async (
 				price: event.params.order.payload.price,
 				trader: event.params.order.payload.trader.payload.bits,
 				orderType: baseSize > 0 ? "Buy" : "Sell",
-				contractTimestamp: event.params.timestamp,
+				// contractTimestamp: event.params.timestamp,
 				timestamp: getISOTime(event.block.time),
 				status: "Active",
 			};

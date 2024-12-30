@@ -27,7 +27,7 @@ PerpMarket.TradeEvent.handlerWithLoader({
 
 			// timestamp: event.params.timestamp,
 			txId: event.transaction.id,
-			contractTimestamp: event.params.timestamp,
+			// contractTimestamp: event.params.timestamp,
 			timestamp: getISOTime(event.block.time),
 		};
 		context.TradeEvent.set(tradeEvent);

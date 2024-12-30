@@ -42,7 +42,7 @@ PerpMarket.OrderEvent.handlerWithLoader({
 				: undefined,
 
 			txId: event.transaction.id,
-			contractTimestamp: event.params.timestamp,
+			// contractTimestamp: event.params.timestamp,
 			timestamp: getISOTime(event.block.time),
 		};
 		context.OrderEvent.set(orderEvent);
