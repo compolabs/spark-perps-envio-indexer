@@ -107,7 +107,7 @@ type Market {
 type TradeEvent {
   id: ID!
   # baseToken: String! @index
-
+  market: String! @index
   sellOrderId: String! @index
   buyOrderId: String! @index
 
