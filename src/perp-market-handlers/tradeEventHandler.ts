@@ -16,6 +16,7 @@ PerpMarket.TradeEvent.handlerWithLoader({
 		// Construct the cancelOrderEvent object and save in context for tracking
 		const tradeEvent: TradeEvent = {
 			id: nanoid(),
+			market: event.srcAddress,
 			sellOrderId: event.params.sell_order_id,
 			buyOrderId: event.params.buy_order_id,
 
