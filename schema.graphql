@@ -9,13 +9,6 @@ enum OrderType {
   Buy
 }
 
-# enum MarketEventIdentifier {
-#   MarketCreateEvent
-#   MarketCloseEvent
-#   CloMarketPauseEventsed
-#   MarketUnpauseEvent
-# }
-
 enum OrderStatus {
   Active
   Closed
@@ -117,9 +110,7 @@ type TradeEvent {
   seller: String! @index
   buyer: String! @index
 
-  # timestamp: String!
   txId: String! @index
-  # contractTimestamp: BigInt!
   timestamp: String!
 }
 
@@ -134,7 +125,6 @@ type OrderEvent {
   baseSize: BigInt
   price: BigInt
   txId: String! @index
-  # contractTimestamp: BigInt!
   timestamp: String!
 }
 
@@ -148,8 +138,7 @@ type Order {
   trader: String! @index
   orderType: OrderType! @index
   status: OrderStatus! @index
-  # initialAmount: BigInt!
-  # contractTimestamp: BigInt!
+
   timestamp: String!
 }
 
@@ -163,8 +152,6 @@ type ActiveSellOrder {
   trader: String! @index
   orderType: OrderType! @index
   status: OrderStatus! @index
-  # initialAmount: BigInt!
-  # contractTimestamp: BigInt!
   timestamp: String!
 }
 
@@ -178,8 +165,6 @@ type ActiveBuyOrder {
   trader: String! @index
   orderType: OrderType! @index
   status: OrderStatus! @index
-  # initialAmount: BigInt!
-  # contractTimestamp: BigInt!
   timestamp: String!
 }
 
@@ -194,7 +179,6 @@ type OpenOrderEvent {
   baseSize: BigInt
   price: BigInt
   txId: String! @index
-  # contractTimestamp: BigInt!
   timestamp: String!
 }
 
@@ -209,7 +193,6 @@ type RemoveUncollaterizedEvent {
   baseSize: BigInt
   price: BigInt
   txId: String! @index
-  # contractTimestamp: BigInt!
   timestamp: String!
 }
 
