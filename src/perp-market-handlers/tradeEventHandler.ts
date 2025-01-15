@@ -25,7 +25,7 @@ PerpMarket.TradeEvent.handlerWithLoader({
 
 			seller: event.params.seller.payload.bits,
 			buyer: event.params.buyer.payload.bits,
-
+			sellerIsMaker: event.params.seller_is_maker,
 			// timestamp: event.params.timestamp,
 			txId: event.transaction.id,
 			// contractTimestamp: event.params.timestamp,

@@ -6,7 +6,7 @@ networks:
     contracts:
       - name: AccountBalance
         address:
-          - 0x7b45943ab1b22185113b11e6b98bd128fdd416001274f6910866cb6ff644b246
+          - 0x812aa6cb0828d3d1b069d0e2c1e4eab49c62841dc9eb71043ac71105c382e3b6
         abi_file_path: ./abis/account-balance.json
         handler: ./src/PerpsHandlers.ts
         events:
@@ -14,7 +14,7 @@ networks:
           - name: AccountBalanceChangeEvent
       - name: PerpMarket
         address:
-          - 0x7b45943ab1b22185113b11e6b98bd128fdd416001274f6910866cb6ff644b246
+          - 0x812aa6cb0828d3d1b069d0e2c1e4eab49c62841dc9eb71043ac71105c382e3b6
         abi_file_path: ./abis/perp-market.json
         handler: ./src/PerpsHandlers.ts
         events:
@@ -23,7 +23,7 @@ networks:
           - name: MarketEvent
       - name: Vault
         address:
-          - 0x104e908267fea156a8716b4fc4d238e71fb30a2566f26e71370d54bc5e1dfc6d
+          - 0x996c3cb59e0ec48ccc1b3053debf165e778c4127b24fe90432d63deca772d07e
         abi_file_path: ./abis/vault.json
         handler: ./src/PerpsHandlers.ts
         events:

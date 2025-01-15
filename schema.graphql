@@ -106,7 +106,7 @@ type TradeEvent {
 
   tradeSize: BigInt! @index
   tradePrice: BigInt! @index
-
+  sellerIsMaker: Boolean! @index
   seller: String! @index
   buyer: String! @index
 
